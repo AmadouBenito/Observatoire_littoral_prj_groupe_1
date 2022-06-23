@@ -38,9 +38,28 @@ class User extends Model
 {
 	protected $table = 'users';
 
+<<<<<<< HEAD
 	protected $casts = [
 		'roles_idroles' => 'int'
 	];
+=======
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+
+    protected $fillable = [
+        'name',
+        'lastName',
+        'tel',
+        'adresse',
+        'email',
+        'password',
+        'role',
+
+    ];
+>>>>>>> bdd7c15b0bc6efb3d51f14067fa080cd11056828
 
 	protected $dates = [
 		'email_verified_at'
