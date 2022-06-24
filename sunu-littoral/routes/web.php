@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-/* Cette route est pour tester l'intégration de 
+/* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
 Route::get('/accueil', function () {
     return view('accueil');
