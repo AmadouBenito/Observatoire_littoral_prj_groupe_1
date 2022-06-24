@@ -38,11 +38,9 @@ class User extends Model
 {
 	protected $table = 'users';
 
-<<<<<<< HEAD
 	protected $casts = [
 		'roles_idroles' => 'int'
 	];
-=======
     /**
      * The attributes that are mass assignable.
      *
@@ -59,21 +57,12 @@ class User extends Model
         'role',
 
     ];
->>>>>>> bdd7c15b0bc6efb3d51f14067fa080cd11056828
 
 	protected $dates = [
 		'email_verified_at'
 	];
 
 	protected $hidden = [
-		'password',
-		'remember_token'
-	];
-
-	protected $fillable = [
-		'name',
-		'email',
-		'email_verified_at',
 		'password',
 		'remember_token'
 	];
