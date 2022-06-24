@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('accueil');
-    //return view('welcome');
+    //return view('accueil');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -24,9 +24,7 @@ Route::get('/dashboard', function () {
 
 /* Cette route est pour tester l'intégration de 
 la page d'accueil du site (Front office) */
-Route::get('/accueil', function () {
-    return view('accueil');
-});
+Route::view('/acueil', 'accueil');
 
 
 require __DIR__ . '/auth.php';
