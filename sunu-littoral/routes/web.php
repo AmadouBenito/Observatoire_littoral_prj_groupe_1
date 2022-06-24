@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 /* Cette route est pour tester l'intégration de 
 la page d'accueil du site (Front office) */
-Route::view('/acueil', 'accueil');
+Route::view('/accueil', 'site.accueil');
 
 
 require __DIR__ . '/auth.php';
