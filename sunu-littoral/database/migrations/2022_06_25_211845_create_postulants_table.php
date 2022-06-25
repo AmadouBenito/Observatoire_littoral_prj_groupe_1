@@ -14,12 +14,12 @@ class CreatePostulantsTable extends Migration
     public function up()
     {
         Schema::create('postulants', function (Blueprint $table) {
-            $table->integer('id', true);
+            $table->id();
             $table->string('fichier', 45)->nullable();
             $table->unsignedBigInteger('users_id')->index('fk_users_has_appelDoffres_users1_idx');
             $table->integer('appelDoffres_id')->index('fk_users_has_appelDoffres_appelDoffres1_idx');
 
-            $table->primary(['id', 'users_id', 'appelDoffres_id']);
+            $table->unique(['users_id', 'appelDoffres_id']);
         });
     }
 

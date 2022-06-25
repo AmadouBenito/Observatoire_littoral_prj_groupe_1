@@ -14,12 +14,12 @@ class CreateOngsTable extends Migration
     public function up()
     {
         Schema::create('ongs', function (Blueprint $table) {
-            $table->integer('id', true);
+            $table->id();
             $table->longText('commentaire')->nullable();
             $table->unsignedBigInteger('users_id')->index('fk_users_has_projets_users1_idx');
             $table->integer('projets_id')->index('fk_users_has_projets_projets1_idx');
 
-            $table->primary(['id', 'users_id', 'projets_id']);
+            $table->unique(['users_id', 'projets_id']);
         });
     }
 
