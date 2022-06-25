@@ -25,6 +25,9 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('roles_id')->index('fk_users_roles_idx');
+
+
         });
     }
 
