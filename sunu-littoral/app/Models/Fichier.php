@@ -16,9 +16,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $titre
  * @property string|null $url
  * @property Carbon|null $date
- * @property int $users_id
- * @property int $type-fichiers_id
- * @property int $domaines_id
+ * @property int $user_id
+ * @property int $type-fichier_id
+ * @property int $domaine_id
  *
  * @property Domaine $domaine
  * @property TypeFichier $type_fichier
@@ -32,9 +32,9 @@ class Fichier extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int',
-		'type-fichiers_id' => 'int',
-		'domaines_id' => 'int'
+		'user_id' => 'int',
+		'type-fichier_id' => 'int',
+		'domaine_id' => 'int'
 	];
 
 	protected $dates = [
@@ -45,9 +45,9 @@ class Fichier extends Model
 		'titre',
 		'url',
 		'date',
-		'users_id',
-		'type-fichiers_id',
-		'domaines_id'
+		'user_id',
+		'type-fichier_id',
+		'domaine_id'
 	];
 
 	public function domaine()

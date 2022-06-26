@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string|null $fichier
- * @property int $users_id
- * @property int $appelDoffres_id
+ * @property int $user_id
+ * @property int $appelDoffre_id
  *
  * @package App\Models
  */
@@ -24,8 +24,8 @@ class Postulant extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int',
-		'appelDoffres_id' => 'int'
+		'user_id' => 'int',
+		'appelDoffre_id' => 'int'
 	];
 
 	protected $fillable = [

@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $dateDebut
  * @property Carbon|null $dateFin
  * @property string|null $fichier
- * @property int $users_id
+ * @property int $user_id
  *
  * @property User $user
  *
@@ -29,7 +29,7 @@ class Appeldoffre extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int'
+		'user_id' => 'int'
 	];
 
 	protected $dates = [
@@ -42,7 +42,7 @@ class Appeldoffre extends Model
 		'dateDebut',
 		'dateFin',
 		'fichier',
-		'users_id'
+		'user_id'
 	];
 
 	public function user()

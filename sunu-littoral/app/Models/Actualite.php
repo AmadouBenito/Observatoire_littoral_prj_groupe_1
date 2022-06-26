@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $image
  * @property string|null $video
  * @property Carbon|null $date
- * @property int $users_id
+ * @property int $user_id
  *
  * @property User $user
  *
@@ -30,7 +30,7 @@ class Actualite extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int'
+		'user_id' => 'int'
 	];
 
 	protected $dates = [
@@ -43,7 +43,7 @@ class Actualite extends Model
 		'image',
 		'video',
 		'date',
-		'users_id'
+		'user_id'
 	];
 
 	public function user()

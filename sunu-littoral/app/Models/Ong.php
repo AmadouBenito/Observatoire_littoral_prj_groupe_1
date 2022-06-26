@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string|null $commentaire
- * @property int $users_id
- * @property int $projets_id
+ * @property int $user_id
+ * @property int $projet_id
  *
  * @package App\Models
  */
@@ -24,8 +24,8 @@ class Ong extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int',
-		'projets_id' => 'int'
+		'user_id' => 'int',
+		'projet_id' => 'int'
 	];
 
 	protected $fillable = [

@@ -20,7 +20,7 @@ class CreateMeteosTable extends Migration
             $table->string('etatCiel', 45)->nullable();
             $table->integer('temperature')->nullable();
             $table->string('zone', 45)->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_meteos_users1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_meteos_users1_idx');
         });
     }
 

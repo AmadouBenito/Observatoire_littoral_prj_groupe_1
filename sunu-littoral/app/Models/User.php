@@ -25,7 +25,7 @@ class User extends Authenticatable
         'adresse',
         'email',
         'password',
-        'roles_id',
+        'role_id',
     ];
 
     /**
@@ -52,7 +52,7 @@ class User extends Authenticatable
         return $this->hasMany(Actualite::class);
     }
 
-    public function meteo()
+    public function meteos()
     {
         return $this->hasMany(Meteo::class);
     }

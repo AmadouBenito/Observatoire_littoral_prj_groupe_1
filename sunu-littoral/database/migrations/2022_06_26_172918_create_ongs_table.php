@@ -16,10 +16,10 @@ class CreateOngsTable extends Migration
         Schema::create('ongs', function (Blueprint $table) {
             $table->integer('id', true);
             $table->longText('commentaire')->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_users_has_projets_users1_idx');
-            $table->integer('projets_id')->index('fk_users_has_projets_projets1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_users_has_projets_users1_idx');
+            $table->integer('projet_id')->index('fk_users_has_projets_projets1_idx');
 
-            $table->unique(['id', 'users_id', 'projets_id']);
+            $table->unique(['id', 'user_id', 'projet_id']);
         });
     }
 

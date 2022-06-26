@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $etatCiel
  * @property int|null $temperature
  * @property string|null $zone
- * @property int $users_id
+ * @property int $user_id
  *
  * @property User $user
  *
@@ -30,7 +30,7 @@ class Meteo extends Model
 
 	protected $casts = [
 		'temperature' => 'int',
-		'users_id' => 'int'
+		'user_id' => 'int'
 	];
 
 	protected $fillable = [
@@ -39,7 +39,7 @@ class Meteo extends Model
 		'etatCiel',
 		'temperature',
 		'zone',
-		'users_id'
+		'user_id'
 	];
 
 	public function user()

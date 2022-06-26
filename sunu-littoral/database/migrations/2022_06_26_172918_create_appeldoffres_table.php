@@ -19,7 +19,7 @@ class CreateAppeldoffresTable extends Migration
             $table->dateTime('dateDebut')->nullable();
             $table->dateTime('dateFin')->nullable();
             $table->string('fichier', 255)->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_appelDoffres_users1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_appelDoffres_users1_idx');
         });
     }
 

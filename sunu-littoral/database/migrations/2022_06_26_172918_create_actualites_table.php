@@ -20,8 +20,8 @@ class CreateActualitesTable extends Migration
             $table->string('image', 45)->nullable();
             $table->string('video', 45)->nullable();
             $table->dateTime('date')->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_actualites_users_idx');
-            $table->integer('categories_id')->index('fk_actualites_categories1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_actualites_user_idx');
+            $table->integer('categorie_id')->index('fk_actualites_categories1_idx');
         });
     }
 

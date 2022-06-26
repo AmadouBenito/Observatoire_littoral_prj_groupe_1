@@ -18,9 +18,9 @@ class CreateFichiersTable extends Migration
             $table->string('titre', 45)->nullable();
             $table->string('url', 255)->nullable();
             $table->dateTime('date')->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_fichiers_users1_idx');
-            $table->integer('type-fichiers_id')->index('fk_fichiers_type-fichiers1_idx');
-            $table->integer('domaines_id')->index('fk_fichiers_domaines1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_fichiers_users1_idx');
+            $table->integer('type-fichier_id')->index('fk_fichiers_type-fichiers1_idx');
+            $table->integer('domaine_id')->index('fk_fichiers_domaines1_idx');
         });
     }
 

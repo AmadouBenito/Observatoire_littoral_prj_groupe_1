@@ -16,10 +16,10 @@ class CreatePostulantsTable extends Migration
         Schema::create('postulants', function (Blueprint $table) {
             $table->integer('id', true);
             $table->string('fichier', 45)->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_users_has_appelDoffres_users1_idx');
-            $table->integer('appelDoffres_id')->index('fk_users_has_appelDoffres_appelDoffres1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_users_has_appelDoffres_users1_idx');
+            $table->integer('appelDoffre_id')->index('fk_users_has_appelDoffres_appelDoffres1_idx');
 
-            $table->unique(['id', 'users_id', 'appelDoffres_id']);
+            $table->unique(['id', 'user_id', 'appelDoffre_id']);
         });
     }
 

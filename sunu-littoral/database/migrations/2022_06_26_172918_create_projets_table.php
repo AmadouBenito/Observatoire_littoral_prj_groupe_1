@@ -17,7 +17,7 @@ class CreateProjetsTable extends Migration
             $table->integer('id', true);
             $table->string('nom', 45)->nullable();
             $table->string('fichir', 255)->nullable();
-            $table->unsignedBigInteger('users_id')->index('fk_projets_users1_idx');
+            $table->unsignedBigInteger('user_id')->index('fk_projets_users1_idx');
         });
     }
 

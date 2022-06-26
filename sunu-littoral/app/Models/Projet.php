@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string|null $nom
  * @property string|null $fichir
- * @property int $users_id
+ * @property int $user_id
  *
  * @property User $user
  *
@@ -26,13 +26,13 @@ class Projet extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'users_id' => 'int'
+		'user_id' => 'int'
 	];
 
 	protected $fillable = [
 		'nom',
 		'fichir',
-		'users_id'
+		'user_id'
 	];
 
 	public function user()
