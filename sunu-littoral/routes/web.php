@@ -8,6 +8,7 @@ use App\Http\Controllers\ControllerOng;
 use App\Http\Controllers\ControllerScientifique;
 use App\Http\Controllers\ControllerSecteurPrive;
 use App\Http\Controllers\ControllerServiceEtat;
+use App\Http\Controllers\ControllerDashboard;
 
 
 /*
@@ -26,9 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[ControllerDashboard::class,'dashboardFuntion'])->middleware(['auth'])->name('dashboard');
 
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
@@ -37,17 +36,9 @@ Route::view('/accueil', 'site.accueil');
 
 require __DIR__ . '/auth.php';
 
-Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acceder a ces routes
-    Route::get('/pecheur',[ControllerPecheur::class,'page_pecheur']);
-    Route::get('/scientifique',[ControllerScientifique::class,'page_scientifique']);
-    Route::get('/populationenvironnant',[ControllerPopulationEnvironnant::class,'page_pop_env']);
-    Route::get('/ong',[ControllerOng::class,'page_ong']);
-    Route::get('/serviceetat',[ControllerServiceEtat::class,'page_service_etat']);
-    Route::get('/secteurprive',[ControllerSecteurPrive::class,'page_secteur_prive']);
-    Route::get('/admin',[ControllerAdmin::class,'page_admin']);
-});
 
-Route::middleware('pecheur_midd_cle')->group(function(){ //acces autoriser pour les pecheurs
+Route::middleware(['auth','est.pecheur'])->group(function(){ //acces autoriser pour les pecheurs
+    Route::get('/pecheur',[ControllerPecheur::class,'page_pecheur']);
     Route::get('/pecheur/consulterMeteo',[]);
     Route::get('/pecheur/stocker',[]);
     Route::get('/pecheur/partager',[]);
@@ -57,7 +48,8 @@ Route::middleware('pecheur_midd_cle')->group(function(){ //acces autoriser pour 
 });
 
 
-Route::middleware('scientifique_midd_cle')->group(function(){ //acces autoriser pour les scientifique
+Route::middleware(['auth','est.scientifique'])->group(function(){ //acces autoriser pour les scientifique
+    Route::get('/scientifique',[ControllerScientifique::class,'page_scientifique']);
     Route::get('/scientifique/consulterMeteo',[]);
     Route::get('/scientifique/stocker',[]);
     Route::get('/scientifique/partager',[]);
@@ -67,7 +59,8 @@ Route::middleware('scientifique_midd_cle')->group(function(){ //acces autoriser 
 });
 
 
-Route::middleware('popEnv_midd_cle')->group(function(){ //acces autoriser pour les population environnant
+Route::middleware(['auth','est.popEnv'])->group(function(){ //acces autoriser pour les population environnant
+    Route::get('/populationenvironnant',[ControllerPopulationEnvironnant::class,'page_pop_env']);
     Route::get('/populationenvironnant/consulterMeteo',[]);
     Route::get('/populationenvironnant/stocker',[]);
     Route::get('/populationenvironnant/partager',[]);
@@ -76,7 +69,8 @@ Route::middleware('popEnv_midd_cle')->group(function(){ //acces autoriser pour l
 });
 
 
-Route::middleware('ong_midd_cle')->group(function(){ //acces autoriser pour les ong
+Route::middleware(['auth','est.ong'])->group(function(){ //acces autoriser pour les ong
+    Route::get('/ong',[ControllerOng::class,'page_ong']);
     Route::get('/ong/consulterMeteo',[]);
     Route::get('/ong/stocker',[]);
     Route::get('/ong/partager',[]);
@@ -87,7 +81,8 @@ Route::middleware('ong_midd_cle')->group(function(){ //acces autoriser pour les 
 });
 
 
-Route::middleware('serv_etat_midd_cle')->group(function(){ //acces autoriser pour les service de l'etat
+Route::middleware(['auth','est.serv_etat'])->group(function(){ //acces autoriser pour les service de l'etat
+    Route::get('/serviceetat',[ControllerServiceEtat::class,'page_service_etat']);
     Route::get('/serviceetat/consulterMeteo',[]);
     Route::get('/serviceetat/stocker',[]);
     Route::get('/serviceetat/partager',[]);
@@ -97,7 +92,8 @@ Route::middleware('serv_etat_midd_cle')->group(function(){ //acces autoriser pou
 });
 
 
-Route::middleware('sect_prive_midd_cle')->group(function(){ //acces autoriser pour les secteur prive
+Route::middleware(['auth','est.sect_prive'])->group(function(){ //acces autoriser pour les secteur prive
+    Route::get('/secteurprive',[ControllerSecteurPrive::class,'page_secteur_prive']);
     Route::get('/secteurprive/consulterMeteo',[]);
     Route::get('/secteurprive/stocker',[]);
     Route::get('/secteurprive/partager',[]);
@@ -107,7 +103,8 @@ Route::middleware('sect_prive_midd_cle')->group(function(){ //acces autoriser po
 });
 
 
-Route::middleware('admin_midd_cle')->group(function(){ //acces autoriser pour les admin
+Route::middleware(['auth','est.admin'])->group(function(){ //acces autoriser pour les admin
+    Route::get('/admin',[ControllerAdmin::class,'page_admin']);
     Route::get('/admin/gererUtilisateur',[]);
     Route::get('/admin/gererAgenda',[]);
     Route::get('/admin/publierMeteo',[]);
