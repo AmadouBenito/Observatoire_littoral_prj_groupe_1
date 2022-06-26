@@ -21,19 +21,19 @@
             <!-- LastName -->
                         <div>
                             <x-label for="lastName" :value="__('LastName')" />
-            
+
                             <x-input id="lastName" class="block mt-1 w-full" type="text" name="lastName" :value="old('lastName')" required autofocus />
                         </div>
            <!-- Tel -->
                         <div>
                             <x-label for="tel" :value="__('Tel')" />
-            
+
                             <x-input id="tel" class="block mt-1 w-full" type="text" name="tel" :value="old('tel')" required autofocus />
                         </div>
          <!--Adresse  -->
                    <div>
                     <x-label for="adresse" :value="__('Adresse')" />
-    
+
                     <x-input id="adresse" class="block mt-1 w-full" type="text" name="adresse" :value="old('adresse')" required autofocus />
                 </div>
 
@@ -66,11 +66,12 @@
                 <!-- Role -->
             <div class="mt-4">
                 <select name="role" id="role">
-                    <option value="1">Select 1</option>
-                    <option value="2">Select 2</option>
-                    <option value="3">Select 3</option>
-                    <option value="4">Select 4</option>
-                    <option value="5">Select 5</option>
+                    <option value="1">Scientifique</option>
+                    <option value="2">Service de l'etat</option>
+                    <option value="3">Secteur privé</option>
+                    <option value="4">ONG</option>
+                    <option value="5">Pecheurs</option>
+                    <option value="6">Population Environnant</option>
                 </select>
             </div>
 
