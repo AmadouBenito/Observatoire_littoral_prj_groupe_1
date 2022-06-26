@@ -63,20 +63,16 @@
                                 name="password_confirmation" required />
             </div>
 
-             <!-- Role -->
-        <div class="mt-4">
-            <fieldset>
-                <legend>Vous voulez un compte en temps que?cocher le role correspondant</legend>
-               
-                  <input type="radio" name="role" value="Pecheur"/>Pecheur <br/>
-                  <input type="radio" name="role" value="Scientifique"/>Scientifique <br/>
-                  <input type="radio" name="role" value="ONG"/>ONG <br/>
-                  <input type="radio" name="role" value="ServiceEtat"/>Service de l'Etat <br/>
-                  <input type="radio" name="role" value="SecteurPrive"/>Secteur privé<br/>
-                  <input type="radio" name="role" value="Autres"/> Autres<br/>
-                
-            </fieldset>
-        </div>
+                <!-- Role -->
+            <div class="mt-4">
+                <select name="role" id="role">
+                    <option value="1">Select 1</option>
+                    <option value="2">Select 2</option>
+                    <option value="3">Select 3</option>
+                    <option value="4">Select 4</option>
+                    <option value="5">Select 5</option>
+                </select>
+            </div>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

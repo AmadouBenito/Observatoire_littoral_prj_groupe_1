@@ -25,8 +25,7 @@ class User extends Authenticatable
         'adresse',
         'email',
         'password',
-        'role',
-
+        'roles_id',
     ];
 
     /**
@@ -48,7 +47,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function actualite()
+    public function actualites()
     {
         return $this->hasMany(Actualite::class);
     }
