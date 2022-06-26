@@ -53,6 +53,6 @@ class Actualite extends Model
 
     public function categorie()
 	{
-		return $this->belongsTo(Actualite::class);
+		return $this->belongsTo(Category::class);
 	}
 }
