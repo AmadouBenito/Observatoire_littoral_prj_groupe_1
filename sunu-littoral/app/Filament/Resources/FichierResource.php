@@ -49,13 +49,15 @@ class FichierResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('titre'),
+                Tables\Columns\TextColumn::make('titre')
+                ->searchable()
+                ->sortable(),
                 Tables\Columns\TextColumn::make('date')
                 ->dateTime(),
-                Tables\Columns\TextColumn::make('user_id')
+                Tables\Columns\TextColumn::make('user.name')
                     ->label('Auteur'),
                 Tables\Columns\TextColumn::make('type_fichier.libelle'),
-                Tables\Columns\TextColumn::make('domaine_id'),
+                Tables\Columns\TextColumn::make('domaine.libelle'),
             ])
             ->filters([
                 //

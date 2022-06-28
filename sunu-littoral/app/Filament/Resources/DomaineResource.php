@@ -33,7 +33,9 @@ class DomaineResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('libelle'),
+                Tables\Columns\TextColumn::make('libelle')
+                ->searchable()
+                ->sortable(),
             ])
             ->filters([
                 //

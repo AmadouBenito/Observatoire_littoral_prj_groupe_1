@@ -50,8 +50,9 @@ class ActualiteResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                     ->rounded(),
                 Tables\Columns\TextColumn::make('titre')
-                    ->limit(30),
-                Tables\Columns\TextColumn::make('date')->since()
+                    ->limit(30)->searchable(),
+                Tables\Columns\TextColumn::make('date')
+                    ->sortable()
                     ->dateTime()
                     ->label('Date e création'),
                 Tables\Columns\TextColumn::make('user.name')

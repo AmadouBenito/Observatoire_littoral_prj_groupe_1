@@ -23,7 +23,8 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('libelle')->required(),
+                Forms\Components\TextInput::make('libelle')
+                ->required(),
             ]);
     }
 
@@ -31,7 +32,9 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('libelle')->sortable(),
+                Tables\Columns\TextColumn::make('libelle')
+                ->searchable()
+                ->sortable(),
             ])
             ->filters([
                 //
