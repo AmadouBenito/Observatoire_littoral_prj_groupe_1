@@ -43,7 +43,8 @@ class Actualite extends Model
 		'image',
 		'video',
 		'date',
-		'user_id'
+		'user_id',
+		'categorie_id'
 	];
 
 	public function user()

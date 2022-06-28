@@ -44,7 +44,6 @@ Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acced
     Route::get('/ong',[ControllerOng::class,'page_ong']);
     Route::get('/serviceetat',[ControllerServiceEtat::class,'page_service_etat']);
     Route::get('/secteurprive',[ControllerSecteurPrive::class,'page_secteur_prive']);
-    Route::get('/admin',[ControllerAdmin::class,'page_admin']);
 });
 
 Route::middleware('pecheur_midd_cle')->group(function(){ //acces autoriser pour les pecheurs
