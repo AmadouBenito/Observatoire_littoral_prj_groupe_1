@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\ActualiteResource\Pages;
+namespace App\Filament\Resources\FichierResource\Pages;
 
-use App\Filament\Resources\ActualiteResource;
+use App\Filament\Resources\FichierResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateActualite extends CreateRecord
+class CreateFichier extends CreateRecord
 {
-    protected static string $resource = ActualiteResource::class;
-
+    protected static string $resource = FichierResource::class;
+    
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
@@ -18,12 +18,13 @@ class CreateActualite extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['user_id'] = auth()->id();
+        $data['date'] = now();
     
         return $data;
     }
 
     protected function getCreatedNotificationMessage(): ?string
     {
-        return 'Fichier créé avec succès';
+        return 'Actualité créée avec succès';
     }
 }
