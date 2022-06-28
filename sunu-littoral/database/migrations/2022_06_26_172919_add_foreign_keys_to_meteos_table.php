@@ -14,7 +14,7 @@ class AddForeignKeysToMeteosTable extends Migration
     public function up()
     {
         Schema::table('meteos', function (Blueprint $table) {
-            $table->foreign(['user_id'], 'fk_meteos_users1')->references(['id'])->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['user_id'], 'fk_meteos_users1')->references(['id'])->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

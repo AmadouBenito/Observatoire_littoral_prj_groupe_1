@@ -14,10 +14,10 @@ class CreateActualitesTable extends Migration
     public function up()
     {
         Schema::create('actualites', function (Blueprint $table) {
-            $table->integer('id', true);
-            $table->string('titre', 45)->nullable();
-            $table->string('contenue', 45)->nullable();
-            $table->string('image', 45)->nullable();
+            $table->id();
+            $table->text('titre');
+            $table->text('contenue');
+            $table->string('image', 45);
             $table->string('video', 45)->nullable();
             $table->dateTime('date')->nullable();
             $table->unsignedBigInteger('user_id')->index('fk_actualites_user_idx');

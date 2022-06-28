@@ -15,7 +15,7 @@ class CreateTypeFichiersTable extends Migration
     {
         Schema::create('type-fichiers', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('libelle', 45)->nullable();
+            $table->string('libelle', 255)->nullable();
         });
     }
 

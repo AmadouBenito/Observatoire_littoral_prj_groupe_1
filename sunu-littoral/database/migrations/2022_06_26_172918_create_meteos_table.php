@@ -15,11 +15,11 @@ class CreateMeteosTable extends Migration
     {
         Schema::create('meteos', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('vent', 45)->nullable();
-            $table->string('vague', 45)->nullable();
-            $table->string('etatCiel', 45)->nullable();
+            $table->string('vent', 255)->nullable();
+            $table->string('vague', 255)->nullable();
+            $table->string('etatCiel', 255)->nullable();
             $table->integer('temperature')->nullable();
-            $table->string('zone', 45)->nullable();
+            $table->string('zone', 255)->nullable();
             $table->unsignedBigInteger('user_id')->index('fk_meteos_users1_idx');
         });
     }

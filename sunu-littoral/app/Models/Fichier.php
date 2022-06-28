@@ -46,7 +46,7 @@ class Fichier extends Model
 		'url',
 		'date',
 		'user_id',
-		'type-fichier_id',
+		'type_fichier_id',
 		'domaine_id'
 	];
 

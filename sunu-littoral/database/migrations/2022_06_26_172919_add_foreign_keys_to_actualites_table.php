@@ -14,8 +14,8 @@ class AddForeignKeysToActualitesTable extends Migration
     public function up()
     {
         Schema::table('actualites', function (Blueprint $table) {
-            $table->foreign(['categorie_id'], 'fk_actualites_categories1')->references(['id'])->on('categories')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-            $table->foreign(['user_id'], 'fk_actualites_users')->references(['id'])->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['categorie_id'], 'fk_actualites_categories1')->references(['id'])->on('categories')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign(['user_id'], 'fk_actualites_users')->references(['id'])->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

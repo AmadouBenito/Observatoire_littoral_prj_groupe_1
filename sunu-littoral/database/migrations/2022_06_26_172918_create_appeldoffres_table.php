@@ -15,10 +15,10 @@ class CreateAppeldoffresTable extends Migration
     {
         Schema::create('appeldoffres', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('libelle', 45)->nullable();
+            $table->string('libelle', 255)->nullable();
             $table->dateTime('dateDebut')->nullable();
             $table->dateTime('dateFin')->nullable();
-            $table->string('fichier', 255)->nullable();
+            $table->text('fichier')->nullable();
             $table->unsignedBigInteger('user_id')->index('fk_appelDoffres_users1_idx');
         });
     }
