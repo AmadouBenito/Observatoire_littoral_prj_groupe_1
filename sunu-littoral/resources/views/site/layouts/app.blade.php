@@ -41,8 +41,11 @@
 
 <body>
 
+<<<<<<< HEAD
     @yield('menu-mobile')
     @yield('actualite')
+=======
+>>>>>>> de8468885a68782782f7f609de17f4e754253925
     <!--====== SEARCH PART START ======-->
 
     <div class="binduz-er-news-search-box">
@@ -91,59 +94,45 @@
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home <i class="fa fa-angle-down"></i></a>
+                                            <a class="binduz-er-nav-link" href="index.html">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="archived.html">Presentation <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="index.html">Home 1</a></li>
-                                                <li><a href="index-2.html">Home 2</a></li>
-                                                <li><a href="index-3.html">Home 3</a></li>
-                                                <li><a href="index-4.html">Home 4</a></li>
-                                                <li><a href="index-5.html">Home 5</a></li>
-                                                <li><a href="index-6.html">Home 6</a></li>
-                                                <li><a href="index-7.html">Home 7</a></li>
-                                                <li><a href="index-8.html">Home 8</a></li>
-                                                <li><a href="index-9.html">Home 9</a></li>
-                                                <li><a href="index-10.html">Home 10</a></li>
-                                                <li><a href="index-11.html">Home 11</a></li>
-                                                <li><a href="index-12.html">Home 12</a></li>
+                                                <li><a href="blog-details-1.html">historique</a></li>
+                                                <li><a href="blog-details-2.html">mission</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="binduz-er-nav-link" href="archived.html">Archived </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="binduz-er-nav-link" href="author.html">Author</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Pages<i class="fa fa-angle-down"></i></a>
+                                            <a class="nav-link" href="archived.html">Publication <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="blog-details-1.html">Blog Details 1</a></li>
-                                                <li><a href="blog-details-2.html">Blog Details 2</a></li>
+                                                <li><a href="blog-details-1.html">rapport</a></li>
+                                                <li><a href="blog-details-2.html">meteo</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about-us.html">About</a>
+                                            <a class="nav-link" href="#">Media<i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog-details-1.html">video</a></li>
+                                                <li><a href="blog-details-2.html">image</a></li>
+                                                <li><a href="blog-details-2.html">audio</a></li>
+                                            </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">Contact</a>
+                                            <a class="nav-link" href="#">Projet<i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog-details-1.html">appel offre</a></li>
+                                                <li><a href="blog-details-2.html">projet</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="about-us.html">A Propos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contact.html">Contactez-Nous</a>
                                         </li>
                                     </ul>
                                 </div> <!-- navbar collapse -->
-                                <div class="binduz-er-navbar-btn d-flex">
-                                    <div class="binduz-er-header-dropdown-select binduz-er-select-item d-none d-sm-block">
-                                        <select id="cars">
-                                            <option value="volvo" selected>Editions</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="vw">VW</option>
-                                            <option value="audi">Audi</option>
-                                        </select>
-                                    </div>
-                                    <div class="binduz-er-widget d-flex">
-                                        <a class="binduz-er-news-search-open" href="#"><i class="far fa-search"></i></a>
-                                    </div>
-                                    <span class="binduz-er-toggle-btn toggle-btn binduz-er-news-canvas_open d-block">
-                                        <i class="fal fa-bars"></i>
-                                    </span>
-                                </div>
                             </nav>
                         </div> <!-- navigation -->
                     </div>
@@ -160,116 +149,7 @@
 
     <!--====== BINDUZ FOOTER 3  PART START ======-->
 
-    <footer class="binduz-er-footer-3-area">
-        <div class=" container">
-            <div class="row">
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">Tech</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Innovate</a></li>
-                                <li><a href="#">Gadget</a></li>
-                                <li><a href="#">Mission: Ahead</a></li>
-                                <li><a href="#">Upstarts</a></li>
-                                <li><a href="#">Work Transformed</a></li>
-                                <li><a href="#">Innovative Cities</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">Style</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Arts</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Luxury</a></li>
-                                <li><a href="#">Beauty</a></li>
-                                <li><a href="#">Video</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">Travel</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Destinations</a></li>
-                                <li><a href="#">Food & Drink</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Stay</a></li>
-                                <li><a href="#">Videos</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">Sports</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Pro Football</a></li>
-                                <li><a href="#">College Football</a></li>
-                                <li><a href="#">Basketball</a></li>
-                                <li><a href="#">Baseball</a></li>
-                                <li><a href="#">Soccer</a></li>
-                                <li><a href="#">Olympics</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">Videos</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Live TV</a></li>
-                                <li><a href="#">Digital Studios</a></li>
-                                <li><a href="#">CNN Films</a></li>
-                                <li><a href="#">HLN</a></li>
-                                <li><a href="#">TV Schedule</a></li>
-                                <li><a href="#">TV Shows A-Z</a></li>
-                                <li><a href="#">OurVR</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-2 col-md-4 col-sm-6">
-                    <div class="binduz-er-footer-navigation-widget mt-30">
-                        <div class="binduz-er-footer-title">
-                            <h3 class="binduz-er-title">More</h3>
-                        </div>
-                        <div class="binduz-er-navigarion-list">
-                            <ul>
-                                <li><a href="#">Photos</a></li>
-                                <li><a href="#">Longform</a></li>
-                                <li><a href="#">Investigations</a></li>
-                                <li><a href="#">Profiles</a></li>
-                                <li><a href="#">Leadership</a></li>
-                                <li><a href="#">Newsletters</a></li>
-                                <li><a href="#">Work for Binduzz</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
     <div class="binduz-er-footer-copyright-area">
         <div class=" container">
             <div class="row align-items-center">
