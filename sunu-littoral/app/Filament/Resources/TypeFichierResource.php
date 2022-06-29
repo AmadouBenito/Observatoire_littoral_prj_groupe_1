@@ -19,6 +19,9 @@ class TypeFichierResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?string $navigationGroup = 'Fichiers et Médias';
+
+
     public static function form(Form $form): Form
     {
         return $form
