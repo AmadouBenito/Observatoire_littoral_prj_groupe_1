@@ -52,6 +52,6 @@ class Appeldoffre extends Model
 
     public function postulants()
 	{
-		return $this->hasMany(Postulant::class);
+        return $this->belongsToMany(User::class, 'postulants');
 	}
 }

@@ -27,9 +27,12 @@ class ProjetResource extends Resource
                     ->required()
                     ->hidden(),
                 Forms\Components\TextInput::make('nom')
-                    ->maxLength(45),
-                Forms\Components\TextInput::make('fichir')
-                    ->maxLength(255),
+                    ->maxLength(45)
+                    ->required(),
+                Forms\Components\FileUpload::make('fichir')
+                    ->preserveFilenames()
+                    ->acceptedFileTypes(['application/pdf'])
+                    ->required(),
             ]);
     }
 

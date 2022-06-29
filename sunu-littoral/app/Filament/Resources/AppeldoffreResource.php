@@ -72,7 +72,7 @@ class AppeldoffreResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AppeldoffreResource\RelationManagers\PostulantsRelationManager::class
         ];
     }
     

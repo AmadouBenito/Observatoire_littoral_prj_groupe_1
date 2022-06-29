@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\ProjetResource\RelationManagers;
+namespace App\Filament\Resources\AppeldoffreResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -10,9 +10,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class OngsRelationManager extends RelationManager
+class PostulantsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'ongs';
+    protected static string $relationship = 'postulants';
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -20,7 +20,9 @@ class OngsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -28,24 +30,16 @@ class OngsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('lastName')
-                    ->label('prenom'),
-                Tables\Columns\TextColumn::make('name')
-                    ->label('Nom'),
-                Tables\Columns\TextColumn::make('tel')
-                    ->label('Téléphone'),
-                Tables\Columns\TextColumn::make('email')
-                    ->label('Adresse mail'),
+                Tables\Columns\TextColumn::make('name'),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
+                //
             ])
             ->actions([
-                /* Tables\Actions\EditAction::make(),
-                Tables\Actions\DissociateAction::make(),
-                Tables\Actions\DeleteAction::make(), */
+                //Tables\Actions\ViewAction::make()
             ])
             ->bulkActions([
                 /* Tables\Actions\DissociateBulkAction::make(),
