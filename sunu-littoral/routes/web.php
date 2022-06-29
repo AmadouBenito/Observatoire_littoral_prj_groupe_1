@@ -30,9 +30,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/besoin', function () {
+    return view('besoin');
+});
+
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
 Route::view('/accueil', 'site.accueil');
+Route::view('/actualite', 'site.actualite');//vue actualite
 
 
 require __DIR__ . '/auth.php';
