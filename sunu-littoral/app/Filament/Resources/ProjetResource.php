@@ -17,25 +17,19 @@ class ProjetResource extends Resource
 {
     protected static ?string $model = Projet::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
-
-    protected static ?string $navigationGroup = 'Projets';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')
-                    ->disabled()
-                    ->default(auth()->id())
-                    ,
+                    ->required()
+                    ->hidden(),
                 Forms\Components\TextInput::make('nom')
-                    ->label("Nom du projet"),
-                Forms\Components\FileUpload::make('fichir')
-                    ->label("Document de description du projet")
-                    ->preserveFilenames()
-                    ->acceptedFileTypes(['application/pdf'])
-                    ->required(),
+                    ->maxLength(45),
+                Forms\Components\TextInput::make('fichir')
+                    ->maxLength(255),
             ]);
     }
 
@@ -43,32 +37,40 @@ class ProjetResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Porteur de projet')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('nom')
+                    ->label('Nom du projet')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('fichir')
+                    ->label('Nom du fichier attaché'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
     
+    public static function getRelations(): array
+    {
+        return [
+            ProjetResource\RelationManagers\OngsRelationManager::class
+        ];
+    }
+    
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageProjets::route('/'),
+            'index' => Pages\ListProjets::route('/'),
+            'create' => Pages\CreateProjet::route('/create'),
+            'edit' => Pages\EditProjet::route('/{record}/edit'),
         ];
-    } 
-    
-    protected function getCreatedNotificationMessage(): ?string
-    {
-        return 'Actualité créée avec succès';
-    }
+    }    
 }

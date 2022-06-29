@@ -42,6 +42,6 @@ class Projet extends Model
 
     public function ongs()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'ongs');
     }
 }
