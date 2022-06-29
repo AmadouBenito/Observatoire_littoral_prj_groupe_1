@@ -1,3 +1,5 @@
+@extends('site.layouts.app')
+
 @section('menu-mobile')
     <!--====== OFFCANVAS MENU PART START ======-->
 
@@ -57,6 +59,7 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="binduz-er-news-offcanvas_footer">
                             <div class="binduz-er-news-logo text-center mb-30 mt-30">
                                 <a href="index.html">
@@ -77,5 +80,5 @@
     </div>
 
     <!--====== OFFCANVAS MENU PART ENDS ======-->
-        
+
 @endsection

@@ -42,6 +42,7 @@
 <body>
 
     @yield('menu-mobile')
+    @yield('actualite')
     <!--====== SEARCH PART START ======-->
 
     <div class="binduz-er-news-search-box">
@@ -278,7 +279,7 @@
                     </div>
                 </div>
                 <div class=" col-lg-8">
-                    <div class="binduz-er-copyright-menu float-lg-end float-none">                    
+                    <div class="binduz-er-copyright-menu float-lg-end float-none">
                         <ul>
                             <li><a href="#">Terms of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
@@ -297,7 +298,7 @@
             </a>
         </div>
     </div>
-                                                            
+
     <!--====== BINDUZ FOOTER 3  PART ENDS ======-->
 
     <!--====== BINDUZ BACK TO TOP PART START ======-->

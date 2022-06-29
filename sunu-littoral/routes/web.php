@@ -33,6 +33,7 @@ Route::get('/dashboard', function () {
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
 Route::view('/accueil', 'site.accueil');
+Route::view('/actualite', 'site.actualite');//vue actualite
 
 
 require __DIR__ . '/auth.php';
