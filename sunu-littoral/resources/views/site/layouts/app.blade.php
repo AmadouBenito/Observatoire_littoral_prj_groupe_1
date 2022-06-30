@@ -206,7 +206,7 @@
                                             <a class="nav-link" href="#accueil">Accueil </a>
                                         </li>
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="#html">Préserntation <i class="fa fa-angle-down"></i></a>
+                                            <a class="nav-link" href="#html">Présentation <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#html">Historique</a></li>
                                                 <li><a href="#2.html">Mission</a></li>
@@ -235,7 +235,7 @@
                                             <a class="nav-link" href="#accueil">A propos </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#accueil">Contactez-nous </a>
+                                            <a class="nav-link" href="#accueil">Contacts</a>
                                         </li>
                                     </ul>
                                 </div> <!-- navbar collapse -->
