@@ -41,11 +41,8 @@
 
 <body>
 
-<<<<<<< HEAD
     @yield('menu-mobile')
     @yield('actualite')
-=======
->>>>>>> de8468885a68782782f7f609de17f4e754253925
     <!--====== SEARCH PART START ======-->
 
     <div class="binduz-er-news-search-box">
