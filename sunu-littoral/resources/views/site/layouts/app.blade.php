@@ -108,9 +108,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Media<i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="blog-details-1.html">video</a></li>
-                                                <li><a href="blog-details-2.html">image</a></li>
-                                                <li><a href="blog-details-2.html">audio</a></li>
+                                                <li><a href="{{ route('accueil.video') }}">video</a></li>
+                                                <li><a href="{{ route('accueil.image') }}">image</a></li>
+                                                <li><a href="{{ route('accueil.audio') }}">audio</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -126,6 +126,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="contact.html">Contactez-Nous</a>
                                         </li>
+                                        <li>
+                                            <a href=""><button type="button" class="btn btn-success">Se Connecter</button></a>
+                                        </li>
                                     </ul>
                                 </div> <!-- navbar collapse -->
                             </nav>
@@ -139,6 +142,22 @@
     <!--====== BINDUZ HEADER PART ENDS ======-->
 
     @yield('contenu')
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @yield('mes_images')
+    @yield('mes_videos')
+    @yield('mes_audios')
 
     <!--====== BINDUZ POPULER NEWS PART ENDS ======-->
 
