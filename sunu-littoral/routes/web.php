@@ -23,7 +23,7 @@ use App\Http\Controllers\ControllerServiceEtat;
 
 Route::get('/', function () {
     //return view('accueil');
-    return view('welcome');
+    return view('besoin');
 });
 
 Route::get('/dashboard', function () {
