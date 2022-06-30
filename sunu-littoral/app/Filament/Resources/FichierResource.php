@@ -33,7 +33,7 @@ class FichierResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('titre')
                     ->maxLength(45),
-                Forms\Components\Select::make('type-fichier_id')
+                Forms\Components\Select::make('type_fichier_id')
                     ->relationship('type_fichier','libelle')
                     ->label('Type du ficher')
                     ->required(),
