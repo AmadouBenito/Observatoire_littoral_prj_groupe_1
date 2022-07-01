@@ -202,17 +202,17 @@
                                 <div class="navbar-brand logo"><a href="#html"><img src="{{asset('site/images/logo.png')}}" alt=""></a></div> <!-- logo -->
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul class="navbar-nav m-auto">
-                                        <li class="nav-item">
+                                        <li class="nav-item active">
                                             <a class="nav-link" href="#accueil">Accueil </a>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#html">Présentation <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#html">Historique</a></li>
                                                 <li><a href="#2.html">Mission</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#html">Publication <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#html">Rapports</a></li>
@@ -220,12 +220,12 @@
                                                 <li><a href="#2.html">Appel d'offre</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item ">
                                             <a class="nav-link" href="#html">Média <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{ route('accueil.video') }}">video</a></li>
-                                                <li><a href="{{ route('accueil.image') }}">image</a></li>
-                                                <li><a href="{{ route('accueil.audio') }}">audio</a></li>
+                                                <li><a href="{{ route('accueil.video') }}">Vidéo</a></li>
+                                                <li><a href="{{ route('accueil.image') }}">Image</a></li>
+                                                <li><a href="{{ route('accueil.audio') }}">Audio</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
