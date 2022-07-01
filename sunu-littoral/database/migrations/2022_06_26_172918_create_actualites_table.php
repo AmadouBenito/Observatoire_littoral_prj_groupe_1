@@ -17,8 +17,8 @@ class CreateActualitesTable extends Migration
             $table->id();
             $table->text('titre');
             $table->text('contenue');
-            $table->string('image', 45);
-            $table->string('video', 45)->nullable();
+            $table->string('image', 255);
+            $table->string('video', 255)->nullable();
             $table->dateTime('date')->nullable();
             $table->unsignedBigInteger('user_id')->index('fk_actualites_user_idx');
             $table->integer('categorie_id')->index('fk_actualites_categories1_idx');

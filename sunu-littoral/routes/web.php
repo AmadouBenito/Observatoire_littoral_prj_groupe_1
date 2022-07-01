@@ -23,7 +23,7 @@ use App\Http\Controllers\ControllerMedia;
 
 Route::get('/', function () {
     //return view('accueil');
-    return view('welcome');
+    return view('besoin');
 });
 
 Route::get('/dashboard', function () {
@@ -37,6 +37,7 @@ Route::get('/besoin', function () {
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
 Route::view('/accueil', 'site.accueil');
+Route::view('/actualite', 'site.actualite');//vue actualite
 
 
 require __DIR__ . '/auth.php';
