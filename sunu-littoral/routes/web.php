@@ -32,8 +32,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/besoin', function () {
-    return view('besoin');
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 /* Cette route est pour tester l'intégration de
