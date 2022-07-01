@@ -9,7 +9,7 @@
     <div class="binduz-er-video-post recently-viewed-item">
         <div class="binduz-er-latest-news-item">
             <div class="binduz-er-thumb">
-                <img src="http://localhost:8000/site/images/populer-news-3.jpg" alt="">
+                <img src="{{  $el }}" alt="">
             </div>
             <div class="binduz-er-content">
                 <div class="binduz-er-meta-item">
