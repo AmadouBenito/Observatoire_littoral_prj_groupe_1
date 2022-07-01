@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAdmin;
 use App\Http\Controllers\ControllerPecheur;
@@ -8,7 +9,7 @@ use App\Http\Controllers\ControllerOng;
 use App\Http\Controllers\ControllerScientifique;
 use App\Http\Controllers\ControllerSecteurPrive;
 use App\Http\Controllers\ControllerServiceEtat;
-
+use App\Models\Fichier;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,8 @@ Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acced
     Route::get('/ong',[ControllerOng::class,'page_ong']);
     Route::get('/serviceetat',[ControllerServiceEtat::class,'page_service_etat']);
     Route::get('/secteurprive',[ControllerSecteurPrive::class,'page_secteur_prive']);
+    Route::get('publier/{record}',[Controller::class, 'publier_fichier'])->name('partager_fichier');
+    Route::get('no_publier/{record}',[Controller::class, 'no_publier_fichier'])->name('no_partager_fichier');
 });
 
 Route::middleware('pecheur_midd_cle')->group(function(){ //acces autoriser pour les pecheurs
@@ -117,7 +120,6 @@ Route::middleware('admin_midd_cle')->group(function(){ //acces autoriser pour le
     Route::get('/admin/publierMeteo',[]);
     Route::get('/admin/publierRapport');
 });
-
 
 /**commentaire de Marie */
 

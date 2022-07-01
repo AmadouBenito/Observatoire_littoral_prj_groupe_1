@@ -47,7 +47,8 @@ class Fichier extends Model
 		'date',
 		'user_id',
 		'type_fichier_id',
-		'domaine_id'
+		'domaine_id',
+		'pub_yes_no'
 	];
 
 	public function domaine()
@@ -64,4 +65,10 @@ class Fichier extends Model
 	{
 		return $this->belongsTo(User::class);
 	}
+
+	public function publier()
+	{
+		return $this->save(['pub_yes_no', '1']);
+	}
+
 }

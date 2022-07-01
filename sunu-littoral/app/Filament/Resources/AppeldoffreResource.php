@@ -19,6 +19,10 @@ class AppeldoffreResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -68,7 +72,7 @@ class AppeldoffreResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AppeldoffreResource\RelationManagers\PostulantsRelationManager::class
         ];
     }
     
