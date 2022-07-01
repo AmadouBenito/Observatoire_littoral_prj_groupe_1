@@ -11,6 +11,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -71,6 +72,18 @@ class FichierResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Action::make('edit')
+                    ->label('Paratager')
+                    ->url(fn (Fichier $record): string => route('partager_fichier', $record))
+                    ->icon('heroicon-s-share')
+                    ->color('green')
+                    ->hidden(fn (Fichier $record): bool => $record->pub_yes_no == 1),
+                Action::make('partager')
+                    ->label('Enlever partage')
+                    ->url(fn (Fichier $record): string => route('no_partager_fichier', $record))
+                    ->icon('heroicon-s-share')
+                    ->color('green')
+                    ->hidden(fn (Fichier $record): bool => $record->pub_yes_no == intval('0')),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
