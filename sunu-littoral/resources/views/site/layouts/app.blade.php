@@ -202,17 +202,17 @@
                                 <div class="navbar-brand logo"><a href="#html"><img src="{{asset('site/images/logo.png')}}" alt=""></a></div> <!-- logo -->
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul class="navbar-nav m-auto">
-                                        <li class="nav-item">
+                                        <li class="nav-item active">
                                             <a class="nav-link" href="#accueil">Accueil </a>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#html">Présentation <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#html">Historique</a></li>
                                                 <li><a href="#2.html">Mission</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#html">Publication <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#html">Rapports</a></li>
@@ -220,12 +220,12 @@
                                                 <li><a href="#2.html">Appel d'offre</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item active">
+                                        <li class="nav-item ">
                                             <a class="nav-link" href="#html">Média <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="#html">Vidéo</a></li>
-                                                <li><a href="#2.html">Image</a></li>
-                                                <li><a href="#2.html">Audio</a></li>
+                                                <li><a href="{{ route('accueil.video') }}">Vidéo</a></li>
+                                                <li><a href="{{ route('accueil.image') }}">Image</a></li>
+                                                <li><a href="{{ route('accueil.audio') }}">Audio</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -258,6 +258,17 @@
 
     <!--====== BINDUZ HEADER PART ENDS ======-->
 
+    @yield('contenu')
+
+
+
+
+
+    @yield('mes_images')
+    @yield('mes_videos')
+    @yield('mes_audios')
+
+    <!--====== BINDUZ POPULER NEWS PART ENDS ======-->
 
     @yield('besoin')
 
@@ -389,21 +400,21 @@
                 </div>
             </div>
         </div>
-    
+
         <!--====== BINDUZ FOOTER PART ENDS ======-->
-    
+
         <!--====== BINDUZ BACK TO TOP PART START ======-->
-    
+
         <div class="binduz-er-back-to-top">
             <p>BACK TO TOP <i class="fal fa-long-arrow-right"></i></p>
         </div>
-    
+
         <!--====== BINDUZ BACK TO TOP PART ENDS ======-->
-    
-    
-    
-    
-    
+
+
+
+
+
 
     <!--====== jquery js ======-->
     <script src="{{asset('site/js/vendor/modernizr-3.6.0.min.js')}}"></script>

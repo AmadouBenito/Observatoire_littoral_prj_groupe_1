@@ -9,6 +9,7 @@ use App\Http\Controllers\ControllerOng;
 use App\Http\Controllers\ControllerScientifique;
 use App\Http\Controllers\ControllerSecteurPrive;
 use App\Http\Controllers\ControllerServiceEtat;
+use App\Http\Controllers\ControllerMedia;
 use App\Models\Fichier;
 
 /*
@@ -31,8 +32,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/besoin', function () {
-    return view('besoin');
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 /* Cette route est pour tester l'intégration de
@@ -42,6 +43,10 @@ Route::view('/actualite', 'site.actualite');//vue actualite
 
 
 require __DIR__ . '/auth.php';
+
+Route::get('/images',[ControllerMedia::class,'images'])->name('accueil.image');
+Route::get('/videos',[ControllerMedia::class,'videos'])->name('accueil.video');
+Route::get('/audios',[ControllerMedia::class,'audios'])->name('accueil.audio');
 
 Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acceder a ces routes
     Route::get('/pecheur',[ControllerPecheur::class,'page_pecheur']);

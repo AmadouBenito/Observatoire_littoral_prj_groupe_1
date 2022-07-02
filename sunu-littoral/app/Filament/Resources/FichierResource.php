@@ -27,7 +27,7 @@ class FichierResource extends Resource
     {
         return static::getModel()::count();
     }
-    
+
     public static function form(Form $form): Form
     {
         return $form
@@ -44,7 +44,7 @@ class FichierResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('url')
                     ->preserveFilenames()
-                    ->acceptedFileTypes(['application/pdf'])
+                    ->maxSize(30000000)
                     ->required(),
                 Forms\Components\DateTimePicker::make('date')
                     ->hidden(),
@@ -89,14 +89,14 @@ class FichierResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -104,5 +104,5 @@ class FichierResource extends Resource
             'create' => Pages\CreateFichier::route('/create'),
             'edit' => Pages\EditFichier::route('/{record}/edit'),
         ];
-    }    
+    }
 }
