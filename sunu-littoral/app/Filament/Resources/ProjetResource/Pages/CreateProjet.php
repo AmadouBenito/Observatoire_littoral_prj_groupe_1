@@ -4,18 +4,11 @@ namespace App\Filament\Resources\ProjetResource\Pages;
 
 use App\Filament\Resources\ProjetResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\CreateRecord;
 
-class ManageProjets extends ManageRecords
+class CreateProjet extends CreateRecord
 {
     protected static string $resource = ProjetResource::class;
-
-    protected function getActions(): array
-    {
-        return [
-            Actions\CreateAction::make(),
-        ];
-    }
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -23,8 +16,14 @@ class ManageProjets extends ManageRecords
     
         return $data;
     }
+
     protected function getCreatedNotificationMessage(): ?string
     {
         return 'Projet créée avec succès';
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

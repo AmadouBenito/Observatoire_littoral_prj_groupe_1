@@ -11,6 +11,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -20,13 +21,20 @@ class FichierResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?string $navigationGroup = 'Fichiers et Médias';
+
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('titre')
                     ->maxLength(45),
-                Forms\Components\Select::make('type-fichier_id')
+                Forms\Components\Select::make('type_fichier_id')
                     ->relationship('type_fichier','libelle')
                     ->label('Type du ficher')
                     ->required(),
@@ -36,7 +44,7 @@ class FichierResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('url')
                     ->preserveFilenames()
-                    ->acceptedFileTypes(['application/pdf'])
+                    ->maxSize(30000000)
                     ->required(),
                 Forms\Components\DateTimePicker::make('date')
                     ->hidden(),
@@ -64,19 +72,31 @@ class FichierResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Action::make('edit')
+                    ->label('Paratager')
+                    ->url(fn (Fichier $record): string => route('partager_fichier', $record))
+                    ->icon('heroicon-s-share')
+                    ->color('green')
+                    ->hidden(fn (Fichier $record): bool => $record->pub_yes_no == 1),
+                Action::make('partager')
+                    ->label('Enlever partage')
+                    ->url(fn (Fichier $record): string => route('no_partager_fichier', $record))
+                    ->icon('heroicon-s-share')
+                    ->color('green')
+                    ->hidden(fn (Fichier $record): bool => $record->pub_yes_no == intval('0')),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -84,5 +104,5 @@ class FichierResource extends Resource
             'create' => Pages\CreateFichier::route('/create'),
             'edit' => Pages\EditFichier::route('/{record}/edit'),
         ];
-    }    
+    }
 }

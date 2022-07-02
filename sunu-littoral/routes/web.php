@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAdmin;
 use App\Http\Controllers\ControllerPecheur;
@@ -8,7 +9,8 @@ use App\Http\Controllers\ControllerOng;
 use App\Http\Controllers\ControllerScientifique;
 use App\Http\Controllers\ControllerSecteurPrive;
 use App\Http\Controllers\ControllerServiceEtat;
-
+use App\Http\Controllers\ControllerMedia;
+use App\Models\Fichier;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +25,15 @@ use App\Http\Controllers\ControllerServiceEtat;
 
 Route::get('/', function () {
     //return view('accueil');
-    return view('welcome');
+    return view('besoin');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/besoin', function () {
-    return view('besoin');
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 /* Cette route est pour tester l'intégration de
@@ -42,6 +44,10 @@ Route::view('/actualite', 'site.actualite');//vue actualite
 
 require __DIR__ . '/auth.php';
 
+Route::get('/images',[ControllerMedia::class,'images'])->name('accueil.image');
+Route::get('/videos',[ControllerMedia::class,'videos'])->name('accueil.video');
+Route::get('/audios',[ControllerMedia::class,'audios'])->name('accueil.audio');
+
 Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acceder a ces routes
     Route::get('/pecheur',[ControllerPecheur::class,'page_pecheur']);
     Route::get('/scientifique',[ControllerScientifique::class,'page_scientifique']);
@@ -49,6 +55,8 @@ Route::middleware('auth')->group(function(){ //il faut s'authentifier pour acced
     Route::get('/ong',[ControllerOng::class,'page_ong']);
     Route::get('/serviceetat',[ControllerServiceEtat::class,'page_service_etat']);
     Route::get('/secteurprive',[ControllerSecteurPrive::class,'page_secteur_prive']);
+    Route::get('publier/{record}',[Controller::class, 'publier_fichier'])->name('partager_fichier');
+    Route::get('no_publier/{record}',[Controller::class, 'no_publier_fichier'])->name('no_partager_fichier');
 });
 
 Route::middleware('pecheur_midd_cle')->group(function(){ //acces autoriser pour les pecheurs
@@ -117,7 +125,6 @@ Route::middleware('admin_midd_cle')->group(function(){ //acces autoriser pour le
     Route::get('/admin/publierMeteo',[]);
     Route::get('/admin/publierRapport');
 });
-
 
 /**commentaire de Marie */
 
