@@ -268,6 +268,9 @@
     @yield('mes_videos')
     @yield('mes_audios')
 
+    @yield('projet')
+    @yield('appelOffre')
+
     <!--====== BINDUZ POPULER NEWS PART ENDS ======-->
 
     @yield('besoin')
