@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appeldoffre;
 use App\Models\Fichier;
+use App\Models\Projet;
 use App\Models\TypeFichier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +27,7 @@ class ControllerProjet extends Controller
             $libelle[] = $appoffre[$i]->libelle;
             $fichier = $appoffre[$i]->fichier;
             $url_appOffre[] = Storage::url($fichier);
-            echo $url_appOffre[$i];
+            //echo $url_appOffre[$i];
             $nb_offre++;
         }
 
@@ -40,6 +41,26 @@ class ControllerProjet extends Controller
 
     public function projet()
     {
-        return view('site.projet.projet');
+        // return view('site.projet.projet');
+
+        // return view('site.projet.appelOffre');
+        $projet = Projet::all();
+        $nb_fichiers = count($projet);
+        $nb_projet = 0;
+        $url_projet = array();
+        $nom = array();
+        for ($i = 0; $i < $nb_fichiers; $i++) {
+
+            $nom[] = $projet[$i]->nom;
+            $fichier = $projet[$i]->fichir;
+            $url_projet[] = Storage::url($fichier);
+            echo $url_projet[$i];
+            $nb_projet++;
+        }
+
+
+
+
+        return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_offre' => $nb_projet]);
     }
 }

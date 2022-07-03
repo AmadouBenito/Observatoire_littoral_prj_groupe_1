@@ -44,8 +44,8 @@ Route::view('/accueil', 'site.accueil');
 Route::view('/actualite', 'site.actualite'); //vue actualite
 
 //Page Proge et Appel d'offre
-Route::get('/projet', [ControllerProjet::class, 'projet']);
-Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre']);
+Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
+Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
 
 
 
