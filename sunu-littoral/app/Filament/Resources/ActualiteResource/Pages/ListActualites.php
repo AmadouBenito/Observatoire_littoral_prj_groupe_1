@@ -16,4 +16,5 @@ class ListActualites extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
 }

@@ -105,4 +105,5 @@ class FichierResource extends Resource
             'edit' => Pages\EditFichier::route('/{record}/edit'),
         ];
     }    
+
 }

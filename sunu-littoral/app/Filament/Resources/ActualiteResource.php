@@ -94,6 +94,13 @@ class ActualiteResource extends Resource
         ];
     }    
     
-
+    protected static function shouldRegisterNavigation(): bool
+    {
+        $roles = [
+            'Pecheur' => 3,
+            'Usager' => 4,
+        ];
+        return !in_array(auth()->user()->role_id, $roles)  ;
+    }
     
 }

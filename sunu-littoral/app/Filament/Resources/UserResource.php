@@ -106,4 +106,11 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }    
+    protected static function shouldRegisterNavigation(): bool
+    {
+        $roles = [
+            'admin' => 1,
+        ];
+        return in_array(auth()->user()->role_id, $roles)  ;
+    }
 }
