@@ -15,7 +15,7 @@
             <div class="binduz-er-content">
                 <div class="binduz-er-meta-item">
                     <div class="binduz-er-meta-categories">
-                        <a href="#">Technology</a>
+                        <a href="#">{{ $domaines[$i] }}</a>
                     </div>
                     <div class="binduz-er-meta-date">
                         <span><i class="fal fa-calendar-alt"> {{ $dates[$i] }} </i></span>

@@ -17,18 +17,21 @@ class ControllerMedia extends Controller
         $url_videos = array();
         $dates = array();
         $titres = array();
+        $domaines = array();
+
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
             if ($fichiers[$i]->type_fichier->libelle == 'mp4') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
+                $domaines[] = $fichiers[$i]->domaine->libelle;
                 $url_video = $fichiers[$i]->url;
                 $url_videos[] = Storage::url($url_video);
                 $nb_videos++;
             }
         }
 
-        return view('site.media.video',['url_videos' => $url_videos,'dates' => $dates,'titres' => $titres,'nb_videos' => $nb_videos]);
+        return view('site.media.video',['url_videos' => $url_videos,'dates' => $dates,'titres' => $titres,'nb_videos' => $nb_videos,'domaines' => $domaines]);
     }
 
     public function images(){
@@ -38,17 +41,20 @@ class ControllerMedia extends Controller
         $url_images = array();
         $dates = array();
         $titres = array();
+        $domaines = array();
+
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
             if ($fichiers[$i]->type_fichier->libelle == 'image') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
+                $domaines[] = $fichiers[$i]->domaine->libelle;
                 $url_image = $fichiers[$i]->url;
                 $url_images[] = Storage::url($url_image);
                 $nb_images++;
             }
         }
-        return view('site.media.image',['url_images' => $url_images,'dates' => $dates,'titres' => $titres,'nb_images' => $nb_images]);
+        return view('site.media.image',['url_images' => $url_images,'dates' => $dates,'titres' => $titres,'nb_images' => $nb_images,'domaines' => $domaines]);
     }
 
     public function audios(){
@@ -58,16 +64,19 @@ class ControllerMedia extends Controller
         $url_audios = array();
         $dates = array();
         $titres = array();
+        $domaines = array();
+
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
             if ($fichiers[$i]->type_fichier->libelle == 'mp3') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
+                $domaines[] = $fichiers[$i]->domaine->libelle;
                 $url_audio = $fichiers[$i]->url;
                 $url_audios[] = Storage::url($url_audio);
                 $nb_audios++;
             }
         }
-        return view('site.media.audio',['url_audios' => $url_audios,'dates' => $dates,'titres' => $titres,'nb_audios' => $nb_audios]);
+        return view('site.media.audio',['url_audios' => $url_audios,'dates' => $dates,'titres' => $titres,'nb_audios' => $nb_audios,'domaines' => $domaines]);
     }
 }
