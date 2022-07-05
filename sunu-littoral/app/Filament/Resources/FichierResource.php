@@ -12,6 +12,8 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\Action;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -68,7 +70,7 @@ class FichierResource extends Resource
                 Tables\Columns\TextColumn::make('domaine.libelle'),
             ])
             ->filters([
-                //
+                SelectFilter::make('type_fichier')->relationship('type_fichier', 'libelle')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
