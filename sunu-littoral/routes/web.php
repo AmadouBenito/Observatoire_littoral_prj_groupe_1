@@ -46,7 +46,7 @@ Route::view('/actualite', 'site.actualite'); //vue actualite
 //Page Proge et Appel d'offre
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
-
+Route::get('/downloadProjet/{id}', [ControllerProjet::class, 'downloadProjet'])->name('projet.download');
 
 
 require __DIR__ . '/auth.php';

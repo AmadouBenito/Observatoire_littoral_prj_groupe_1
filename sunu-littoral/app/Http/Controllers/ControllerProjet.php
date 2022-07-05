@@ -54,7 +54,7 @@ class ControllerProjet extends Controller
             $nom[] = $projet[$i]->nom;
             $fichier = $projet[$i]->fichir;
             $url_projet[] = Storage::url($fichier);
-            echo $url_projet[$i];
+            //echo $url_projet[$i];
             $nb_projet++;
         }
 
@@ -62,5 +62,13 @@ class ControllerProjet extends Controller
 
 
         return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_offre' => $nb_projet]);
+    }
+
+
+    public function downloadProjet($i)
+    {
+        $projet = Projet::all();
+        $fichier = $projet[$i]->fichier;
+        return Storage::download($fichier);
     }
 }
