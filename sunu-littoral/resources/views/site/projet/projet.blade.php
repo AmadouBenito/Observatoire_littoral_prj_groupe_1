@@ -4,7 +4,7 @@
 @section('projet')
 
 <div class="row">
-@for($i=0; $i<$nb_offre; $i++)
+@for($i=0; $i<$nb_projet; $i++)
 <div class="col-lg-3">
   <div class="binduz-er-video-post recently-viewed-item">
     <div class="binduz-er-latest-news-item">

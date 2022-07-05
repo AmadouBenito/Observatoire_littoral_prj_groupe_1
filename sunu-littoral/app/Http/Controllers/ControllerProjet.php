@@ -8,6 +8,7 @@ use App\Models\Projet;
 use App\Models\TypeFichier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ControllerProjet extends Controller
 {
@@ -61,7 +62,7 @@ class ControllerProjet extends Controller
 
 
 
-        return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_offre' => $nb_projet]);
+        return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_projet' => $nb_projet]);
     }
 
 
@@ -70,5 +71,13 @@ class ControllerProjet extends Controller
         $projet = Projet::all();
         $fichier = $projet[$i]->fichier;
         return Storage::download($fichier);
+    }
+
+    public function postuler($i, $user_id)
+    {
+        $appoffre = Appeldoffre::all();
+        $fichier = $appoffre[$i]->fichier;
+        $appelOffre_id = $appoffre[$i]->id;
+        DB::insert('insert into postulants (fichier,user_id,appelDoffre_id) values (?, ?, ?)', [$fichier, $user_id, $appelOffre_id]);
     }
 }
