@@ -6,6 +6,7 @@ use App\Filament\Resources\ActualiteResource\Pages;
 use App\Filament\Resources\ActualiteResource\RelationManagers;
 use App\Models\Actualite;
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -32,8 +33,22 @@ class ActualiteResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('titre')
                 ->maxLength(55),
-                Forms\Components\Textarea::make('contenue')
-                ->required(),
+                RichEditor::make('contenue')
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'undo',
+                    ]),
                 Forms\Components\FileUpload::make('image')
                 ->preserveFilenames()
                 ->image(),
@@ -94,6 +109,13 @@ class ActualiteResource extends Resource
         ];
     }    
     
-
+    protected static function shouldRegisterNavigation(): bool
+    {
+        $roles = [
+            'Pecheur' => 3,
+            'Usager' => 4,
+        ];
+        return !in_array(auth()->user()->role_id, $roles)  ;
+    }
     
 }

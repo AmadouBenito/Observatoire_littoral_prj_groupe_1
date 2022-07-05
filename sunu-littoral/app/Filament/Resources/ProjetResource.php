@@ -76,4 +76,5 @@ class ProjetResource extends Resource
             'edit' => Pages\EditProjet::route('/{record}/edit'),
         ];
     }    
+
 }

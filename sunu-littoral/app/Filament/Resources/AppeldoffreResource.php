@@ -75,6 +75,17 @@ class AppeldoffreResource extends Resource
             AppeldoffreResource\RelationManagers\PostulantsRelationManager::class
         ];
     }
+
+
+    protected static function shouldRegisterNavigation(): bool
+    {
+        $roles = [
+            'admin' => 1,
+            'serviceEtat' => 6,
+            'ong' => 5,
+        ];
+        return in_array(auth()->user()->role_id, $roles)  ;
+    }
     
     public static function getPages(): array
     {

@@ -77,5 +77,9 @@ class User extends Authenticatable
         return $this->hasMany(Appeldoffre::class);
     }
 
+    public function canManageActualites()
+    {
+        return $this->role()->labelle == 'ONG';
+    }
 
 }

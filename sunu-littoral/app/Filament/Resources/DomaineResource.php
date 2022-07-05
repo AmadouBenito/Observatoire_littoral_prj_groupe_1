@@ -57,4 +57,12 @@ class DomaineResource extends Resource
             'index' => Pages\ManageDomaines::route('/'),
         ];
     }    
+
+    protected static function shouldRegisterNavigation(): bool
+    {
+        $roles = [
+            'admin' => 1,
+        ];
+        return in_array(auth()->user()->role_id, $roles)  ;
+    }
 }
