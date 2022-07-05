@@ -46,8 +46,9 @@ Route::view('/actualite', 'site.actualite'); //vue actualite
 //Page Proge et Appel d'offre
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
-Route::get('/downloadProjet/{id}', [ControllerProjet::class, 'downloadProjet'])->name('projet.download');
 Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
+Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
+
 
 require __DIR__ . '/auth.php';
 
