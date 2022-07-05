@@ -9,6 +9,8 @@ use App\Models\TypeFichier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ControllerProjet extends Controller
 {
@@ -22,12 +24,18 @@ class ControllerProjet extends Controller
         $dateDeb = array();
         $dateFin = array();
         $libelle = array();
+        $fichier = array();
+        $appelOffre_id = array();
         for ($i = 0; $i < $nb_fichiers; $i++) {
             $dateDeb[] = $appoffre[$i]->dateDebut;
             $dateFin[] = $appoffre[$i]->dateFin;
             $libelle[] = $appoffre[$i]->libelle;
-            $fichier = $appoffre[$i]->fichier;
-            $url_appOffre[] = Storage::url($fichier);
+            $appelOffre_id[] = $appoffre[$i]->id;
+            $fichir = $appoffre[$i]->fichier;
+            $fichier[] = $appoffre[$i]->fichier;
+            // echo $fichier;
+            // echo $appelOffre_id;
+            $url_appOffre[] = Storage::url($fichir);
             //echo $url_appOffre[$i];
             $nb_offre++;
         }
@@ -35,7 +43,7 @@ class ControllerProjet extends Controller
 
 
 
-        return view('site.projet.appelOffre', ['url_appOffre' => $url_appOffre, 'dateDeb' => $dateDeb, 'dateFin' => $dateFin, 'libelle' => $libelle, 'nb_offre' => $nb_offre]);
+        return view('site.projet.appelOffre', ['url_appOffre' => $url_appOffre, 'dateDeb' => $dateDeb, 'dateFin' => $dateFin, 'libelle' => $libelle, 'nb_offre' => $nb_offre, 'appelOffre_id' => $appelOffre_id, 'fichier' => $fichier]);
     }
 
 
@@ -73,11 +81,14 @@ class ControllerProjet extends Controller
         return Storage::download($fichier);
     }
 
-    public function postuler($i, $user_id)
+    public function postuler($fichier, $appelOffre_id)
     {
-        $appoffre = Appeldoffre::all();
-        $fichier = $appoffre[$i]->fichier;
-        $appelOffre_id = $appoffre[$i]->id;
+
+
+        $user_id = Auth::user()->id;
+
+
         DB::insert('insert into postulants (fichier,user_id,appelDoffre_id) values (?, ?, ?)', [$fichier, $user_id, $appelOffre_id]);
+        return Redirect('appelOffre');
     }
 }

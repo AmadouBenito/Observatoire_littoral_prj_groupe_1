@@ -14,12 +14,13 @@
                       <span class="binduz-er-title"> {{ $libelle[$i] }}</span>
                      
                       <div class="binduz-er-meta-date">
-                        <span><i class="fal fa-calendar-alt"></i>soumission {{ $dateDeb[$i] }}</span><br/>
-                        <span><i class="fal fa-calendar-alt"></i>cloture {{ $dateFin[$i] }}</span>
+                        <span><i class="fal fa-calendar-alt" ></i>cloture:{{ $dateFin[$i] }}</span>
                     </div>
-                <a href="{{ route('appelOffre.postuler') }}"> <button type="button" class="btn btn-outline-warning">Postuler</button></a>
+                 
+                   
+                <a href="{{ route('appelOffre.postuler' , [$fichier[$i] , $appelOffre_id[$i]] ) }}"> <button type="button" class="btn btn-outline-warning">Postuler</button></a>
 
-                      
+            
     </div>
     </div>
     </div>
