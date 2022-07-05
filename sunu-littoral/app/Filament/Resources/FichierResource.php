@@ -19,7 +19,7 @@ class FichierResource extends Resource
 {
     protected static ?string $model = Fichier::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-folder-open';
 
     protected static ?string $navigationGroup = 'Fichiers et Médias';
 

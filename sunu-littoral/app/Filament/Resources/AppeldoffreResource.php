@@ -17,7 +17,7 @@ class AppeldoffreResource extends Resource
 {
     protected static ?string $model = Appeldoffre::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-speakerphone';
 
     protected static function getNavigationBadge(): ?string
     {
