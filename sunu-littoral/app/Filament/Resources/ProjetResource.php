@@ -77,4 +77,9 @@ class ProjetResource extends Resource
         ];
     }    
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereBelongsTo(auth()->user());
+    }
+
 }

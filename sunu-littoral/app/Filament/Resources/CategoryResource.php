@@ -64,4 +64,5 @@ class CategoryResource extends Resource
         ];
         return in_array(auth()->user()->role_id, $roles)  ;
     }
+    
 }

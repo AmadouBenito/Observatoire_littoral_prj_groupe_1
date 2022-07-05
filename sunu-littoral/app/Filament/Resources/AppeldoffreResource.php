@@ -94,5 +94,10 @@ class AppeldoffreResource extends Resource
             'create' => Pages\CreateAppeldoffre::route('/create'),
             'edit' => Pages\EditAppeldoffre::route('/{record}/edit'),
         ];
-    }    
+    }   
+     
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereBelongsTo(auth()->user());
+    }
 }

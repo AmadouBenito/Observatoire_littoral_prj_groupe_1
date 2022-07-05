@@ -106,6 +106,11 @@ class FichierResource extends Resource
             'create' => Pages\CreateFichier::route('/create'),
             'edit' => Pages\EditFichier::route('/{record}/edit'),
         ];
-    }    
+    }  
+    
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereBelongsTo(auth()->user());
+    }
 
 }

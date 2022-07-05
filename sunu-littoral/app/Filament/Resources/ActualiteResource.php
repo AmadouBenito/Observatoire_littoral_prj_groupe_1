@@ -117,5 +117,10 @@ class ActualiteResource extends Resource
         ];
         return !in_array(auth()->user()->role_id, $roles)  ;
     }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereBelongsTo(auth()->user());
+    }
     
 }
