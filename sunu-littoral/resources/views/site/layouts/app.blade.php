@@ -215,7 +215,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#html">Publication <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="#html">Rapports</a></li>
+                                                <li><a href="#">Rapports</a></li>
                                                 <li><a href="#2.html">Météo</a></li>
                                                 <li><a href="{{ route('accueil.appelOffre') }}">Appel d'offre</a></li>
                                             </ul>

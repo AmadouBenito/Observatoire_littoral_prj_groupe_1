@@ -48,10 +48,12 @@ class ControllerProjet extends Controller
         $nb_fichiers = count($projet);
         $nb_projet = 0;
         $url_projet = array();
+        $id_projet = array();
         $nom = array();
         for ($i = 0; $i < $nb_fichiers; $i++) {
 
             $nom[] = $projet[$i]->nom;
+            $id_projet[] = $projet[$i]->id;
             $fichier = $projet[$i]->fichir;
             $url_projet[] = Storage::url($fichier);
             //echo $url_projet[$i];
@@ -61,14 +63,14 @@ class ControllerProjet extends Controller
 
 
 
-        return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_offre' => $nb_projet]);
+        return view('site.projet.projet', ['url_projet' => $url_projet, 'nom' => $nom, 'nb_projet' => $nb_projet,'id_projet' => $id_projet]);
     }
 
 
-    public function downloadProjet($i)
+    public function telecharger_projet($id)
     {
-        $projet = Projet::all();
-        $fichier = $projet[$i]->fichier;
-        return Storage::download($fichier);
+        $projet = Projet::findOrFail($id);
+        $fichier = $projet->fichir;
+        return response()->download(public_path('storage/'.$fichier));
     }
 }
