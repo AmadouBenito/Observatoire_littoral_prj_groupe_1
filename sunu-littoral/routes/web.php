@@ -96,7 +96,7 @@ Route::middleware('popEnv_midd_cle')->group(function () { //acces autoriser pour
 });
 
 
-Route::middleware('ong_midd_cle')->group(function () { //acces autoriser pour les ong
+Route::middleware('ong_midd_cle')->group(function () { //acces autoriser pour les ongs
     Route::get('/ong/consulterMeteo', []);
     Route::get('/ong/stocker', []);
     Route::get('/ong/partager', []);
