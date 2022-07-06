@@ -127,7 +127,7 @@
             <div class="container mt-60">
                 <div class="row">
                     <div class="col-6">
-                        <img src="{{asset('assets/images/logo-4.png')}}" alt=""> <!-- search title -->
+                        <img src="{{asset('assets/images/logo.png')}}" alt=""> <!-- search title -->
                     </div>
                     <div class="col-6">
                         <div class="binduz-er-news-search-close float-end">
@@ -170,17 +170,11 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="binduz-er-topbar-social d-flex justify-content-end align-items-center">
-                        <div class="binduz-er-news-social">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
+                        <div id="s_inscrire" class="binduz-er-news-subscribe-btn">
+                            <a class="binduz-er-main-btn" href="#">S'inscrire</a>
                         </div>
                         <div class="binduz-er-news-subscribe-btn">
-                            <a class="binduz-er-main-btn" href="#">Subscribe</a>
+                            <a class="binduz-er-main-btn" href="#">Se connecter</a>
                         </div>
                     </div>
                 </div>
@@ -199,7 +193,7 @@
                     <div class="col-lg-12">
                         <div class="navigation">
                             <nav class="navbar navbar-expand-lg">
-                                <div class="navbar-brand logo"><a href="#html"><img src="{{asset('site/images/logo.png')}}" alt=""></a></div> <!-- logo -->
+                                <div class="navbar-brand logo"><a href="#html"><img src="{{asset('/images/logo.png')}}" alt=""></a></div> <!-- logo -->
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul class="navbar-nav m-auto">
                                         <li class="nav-item active">
