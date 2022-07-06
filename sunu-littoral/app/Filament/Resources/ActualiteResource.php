@@ -22,10 +22,6 @@ class ActualiteResource extends Resource
 
     protected static ?string $navigationGroup = 'Gestion des actualités';
 
-    protected static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
 
     public static function form(Form $form): Form
     {
