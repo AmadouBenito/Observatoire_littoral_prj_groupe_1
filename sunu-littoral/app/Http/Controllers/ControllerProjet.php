@@ -93,4 +93,13 @@ class ControllerProjet extends Controller
         DB::insert('insert into postulants (fichier,user_id,appelDoffre_id) values (?, ?, ?)', [$fichier, $user_id, $appelOffre_id]);
         return Redirect('appelOffre');
     }
+
+    public function sIntéréssée($projet_id)
+    {
+        $user_id = Auth::user()->id;
+        DB::insert('insert into ongs (user_id,projet_id) values (?,?)', [$user_id, $projet_id]);
+
+
+        return Redirect('projet');
+    }
 }
