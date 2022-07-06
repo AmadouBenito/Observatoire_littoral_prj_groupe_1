@@ -21,7 +21,7 @@ class ControllerMedia extends Controller
 
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
-            if ($fichiers[$i]->type_fichier->libelle == 'mp4') {
+            if ($fichiers[$i]->type_fichier->libelle == 'mp4' and $fichiers[$i]->pub_yes_no == '1') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
                 $domaines[] = $fichiers[$i]->domaine->libelle;
@@ -45,7 +45,7 @@ class ControllerMedia extends Controller
 
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
-            if ($fichiers[$i]->type_fichier->libelle == 'image') {
+            if ($fichiers[$i]->type_fichier->libelle == 'image' and $fichiers[$i]->pub_yes_no == '1') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
                 $domaines[] = $fichiers[$i]->domaine->libelle;
@@ -68,7 +68,7 @@ class ControllerMedia extends Controller
 
         for($i=0 ; $i<$nb_fichiers ; $i++)
         {
-            if ($fichiers[$i]->type_fichier->libelle == 'mp3') {
+            if ($fichiers[$i]->type_fichier->libelle == 'mp3' and $fichiers[$i]->pub_yes_no == '1') {
                 $dates[] = $fichiers[$i]->date;
                 $titres[] = $fichiers[$i]->titre;
                 $domaines[] = $fichiers[$i]->domaine->libelle;

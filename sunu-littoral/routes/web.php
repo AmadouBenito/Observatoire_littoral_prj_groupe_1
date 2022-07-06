@@ -41,15 +41,12 @@ Route::get('/', [ActualiteController::class, 'index'])->name('actualite');
 
 require __DIR__ . '/auth.php';
 
-Route::get('/images', [ControllerMedia::class, 'images'])->name('accueil.image');
+Route::get('/lesimages', [ControllerMedia::class, 'images'])->name('accueil.image');
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
-Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
 Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
-Route::get('/Interesse/{id_projet}', [ControllerProjet::class, 'sIntéréssée'])->name('projet.sIntéréssée');
-
-Route::get('/videos', [ControllerMedia::class, 'videos'])->name('accueil.video');
-Route::get('/audios', [ControllerMedia::class, 'audios'])->name('accueil.audio');
+Route::get('/lesvideos', [ControllerMedia::class, 'videos'])->name('accueil.video');
+Route::get('/lesaudios', [ControllerMedia::class, 'audios'])->name('accueil.audio');
 
 Route::middleware('auth')->group(function () { //il faut s'authentifier pour acceder a ces routes
     Route::get('/pecheur', [ControllerPecheur::class, 'page_pecheur']);
@@ -60,6 +57,8 @@ Route::middleware('auth')->group(function () { //il faut s'authentifier pour acc
     Route::get('/secteurprive', [ControllerSecteurPrive::class, 'page_secteur_prive']);
     Route::get('publier/{record}', [Controller::class, 'publier_fichier'])->name('partager_fichier');
     Route::get('no_publier/{record}', [Controller::class, 'no_publier_fichier'])->name('no_partager_fichier');
+    Route::get('/Interesse/{id_projet}', [ControllerProjet::class, 'sIntéréssée'])->name('projet.sIntéréssée');
+    Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
 });
 
 Route::middleware('pecheur_midd_cle')->group(function () { //acces autoriser pour les pecheurs
