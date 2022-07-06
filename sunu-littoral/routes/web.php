@@ -3,11 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAdmin;
-<<<<<<< HEAD
 use App\Http\Controllers\ActualiteController;
-=======
-use App\Http\Controllers\ControllerAppelOffre;
->>>>>>> 04b34bb975738844356e3104acb14f8e0bc2b10f
 use App\Http\Controllers\ControllerPecheur;
 use App\Http\Controllers\ControllerPopulationEnvironnant;
 use App\Http\Controllers\ControllerOng;
@@ -39,19 +35,8 @@ Route::get('/welcome', function () {
 
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
-<<<<<<< HEAD
 Route::get('/',[ActualiteController::class, 'index'])->name('actualite');
 // Route::view('/actualite', 'site.actualite');//vue actualite
-=======
-Route::view('/accueil', 'site.accueil');
-Route::view('/actualite', 'site.actualite'); //vue actualite
-
-//Page Proge et Appel d'offre
-Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
-Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
-Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
-Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
->>>>>>> 04b34bb975738844356e3104acb14f8e0bc2b10f
 
 
 require __DIR__ . '/auth.php';
