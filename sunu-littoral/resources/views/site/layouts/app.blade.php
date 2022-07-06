@@ -259,6 +259,7 @@
     <!--====== BINDUZ HEADER PART ENDS ======-->
 
     @yield('contenu')
+    @yield('actualite')
 
 
 

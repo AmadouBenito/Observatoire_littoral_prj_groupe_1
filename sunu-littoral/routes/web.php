@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAdmin;
+use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\ControllerPecheur;
 use App\Http\Controllers\ControllerPopulationEnvironnant;
 use App\Http\Controllers\ControllerOng;
@@ -23,11 +24,6 @@ use App\Models\Fichier;
 |
 */
 
-Route::get('/', function () {
-    //return view('accueil');
-    return view('besoin');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -38,8 +34,8 @@ Route::get('/welcome', function () {
 
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
-Route::view('/accueil', 'site.accueil');
-Route::view('/actualite', 'site.actualite');//vue actualite
+Route::get('/',[ActualiteController::class, 'index'])->name('actualite');
+// Route::view('/actualite', 'site.actualite');//vue actualite
 
 
 require __DIR__ . '/auth.php';
