@@ -35,7 +35,7 @@ Route::get('/welcome', function () {
 
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
-Route::get('/',[ActualiteController::class, 'index'])->name('actualite');
+Route::get('/', [ActualiteController::class, 'index'])->name('actualite');
 // Route::view('/actualite', 'site.actualite');//vue actualite
 
 
@@ -44,6 +44,10 @@ require __DIR__ . '/auth.php';
 Route::get('/images', [ControllerMedia::class, 'images'])->name('accueil.image');
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
+Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
+Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
+
+
 Route::get('/videos', [ControllerMedia::class, 'videos'])->name('accueil.video');
 Route::get('/audios', [ControllerMedia::class, 'audios'])->name('accueil.audio');
 
