@@ -46,7 +46,7 @@ Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accuei
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
 Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
 Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
-
+Route::get('/Interesse/{id_projet}', [ControllerProjet::class, 'sIntéréssée'])->name('projet.sIntéréssée');
 
 Route::get('/videos', [ControllerMedia::class, 'videos'])->name('accueil.video');
 Route::get('/audios', [ControllerMedia::class, 'audios'])->name('accueil.audio');

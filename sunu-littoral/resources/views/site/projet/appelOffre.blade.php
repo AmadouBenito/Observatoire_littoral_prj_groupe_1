@@ -18,10 +18,15 @@
                     </div>
                  
                    
-                <a href="{{ route('appelOffre.postuler' , [$fichier[$i] , $appelOffre_id[$i]] ) }}"> <button type="button" class="btn btn-outline-warning">Postuler</button></a>
+                <a href="{{ route('appelOffre.postuler' , [$fichier[$i] , $appelOffre_id[$i]] ) }}"> <button type="button" class="btn btn-outline-warning"  onclick="message();">Postuler</button></a>
                 <a href="{{ route('projet.telecharger',['id' => $appelOffre_id[$i]]) }}"><button type="button" class="btn btn-outline-success">Telecharger</button></a>
    
-            
+                <script>
+
+                  function message(){
+                      alert("Votre demande a bien été prise en compte.Merci");
+                  }               
+             </script>
         </div>
        </div>
     </div>
