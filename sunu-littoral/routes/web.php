@@ -42,6 +42,8 @@ Route::get('/',[ActualiteController::class, 'index'])->name('actualite');
 require __DIR__ . '/auth.php';
 
 Route::get('/images', [ControllerMedia::class, 'images'])->name('accueil.image');
+Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
+Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
 Route::get('/videos', [ControllerMedia::class, 'videos'])->name('accueil.video');
 Route::get('/audios', [ControllerMedia::class, 'audios'])->name('accueil.audio');
 
