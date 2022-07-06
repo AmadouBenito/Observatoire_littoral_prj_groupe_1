@@ -18,7 +18,7 @@ module.exports = {
                 danger: 'red',
                 primary: '#2C5B5C',
                 success: 'green',
-                warning: '',
+                warning: 'yellow',
             },
         },
     },
