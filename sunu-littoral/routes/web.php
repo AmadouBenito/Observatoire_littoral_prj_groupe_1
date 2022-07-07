@@ -43,14 +43,13 @@ Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
 Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
 Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
+Route::get('/fichier/telecharger{id}', [Controller::class, 'telecharger_fichier'])->name('fichier.telecharger');
 
 
-require __DIR__ . '/auth.php';
 
 Route::get('/lesimages', [ControllerMedia::class, 'images'])->name('accueil.image');
 Route::get('/appelOffre', [ControllerProjet::class, 'appelOffre'])->name('accueil.appelOffre');
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');
-Route::get('/projet/telecharger{id}', [ControllerProjet::class, 'telecharger_projet'])->name('projet.telecharger');
 Route::get('/lesvideos', [ControllerMedia::class, 'videos'])->name('accueil.video');
 Route::get('/lesaudios', [ControllerMedia::class, 'audios'])->name('accueil.audio');
 
@@ -68,6 +67,7 @@ Route::middleware('auth')->group(function () { //il faut s'authentifier pour acc
     Route::get('/postuler/{fichier},{appelOffre_id}', [ControllerProjet::class, 'postuler'])->name('appelOffre.postuler');
 });
 
+require __DIR__ . '/auth.php';
 
 
 /**commentaire de Marie */

@@ -35,4 +35,12 @@ class Controller extends BaseController
         Filament::notify('success', 'Publication annulée avec succès');
         return back();
     }
+
+    public function telecharger_fichier($id)
+    {
+        $fichier = Fichier::findOrFail($id);
+        $url = $fichier->url;
+        return response()->download(public_path('storage/' . $url));
+    }
+
 }

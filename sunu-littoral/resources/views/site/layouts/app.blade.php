@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>Binduz - News Magazine Html Template</title>
+    <title>Sunu-littoral \ L'Observatoire nationale du littoral nationnal</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{ asset('site/css/favicon.ico') }}" type="image/png">
@@ -163,18 +163,18 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="binduz-er-topbar-headline">
-                        <p><span><i class="fas fa-bolt"></i> Trending News:</span> <a href="#">Miranda halim was viral after finish his workout.</a></p>
-                        <p><span><i class="fas fa-bolt"></i> Trending News:</span> <a href="#">Celebrating Asian Pacific American art and cultures</a></p>
-                        <p><span><i class="fas fa-bolt"></i> Trending News:</span> <a href="#">Honoring Asian Pacific American Heritage Month at Google</a></p>
+                        <p><span><i class="fas fa-bolt"></i> Sunu-littoral:</span> <a href="#">Kaarange littoral bi, sama yitte</a></p>
+                        <p><span><i class="fas fa-bolt"></i> Sunu-littoral:</span> <a href="#">Kaarange littoral bi, sama yitte</a></p>
+                        <p><span><i class="fas fa-bolt"></i> Sunu-littoral:</span> <a href="#">Kaarange littoral bi, sama yitte</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="binduz-er-topbar-social d-flex justify-content-end align-items-center">
                         <div id="s_inscrire" class="binduz-er-news-subscribe-btn">
-                            <a class="binduz-er-main-btn" href="#">S'inscrire</a>
+                            <a class="binduz-er-main-btn" href="{{route("register")}}">S'inscrire</a>
                         </div>
                         <div class="binduz-er-news-subscribe-btn">
-                            <a class="binduz-er-main-btn" href="#">Se connecter</a>
+                            <a class="binduz-er-main-btn" href="{{url('/admin/login')}}">Se connecter</a>
                         </div>
                     </div>
                 </div>

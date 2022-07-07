@@ -17,9 +17,11 @@ class ActualiteController extends Controller
         $actualitesLast = Actualite::all()->last();
         $categories = Category::all()->take(4);
         $appelDoffres = Appeldoffre::all();
-        $fichiers = Fichier::all();
+        $fichiers = Fichier::all()->take(4);
+        $images = Fichier::all()->where('pub_yes_no', 1);
+        //dd($images[4]->type_fichier->libelle);
         return view('site.accueil',
-               compact('actualites','actualitesLast', 'appelDoffres', 'fichiers', 'categories'));
+               compact('actualites','actualitesLast', 'appelDoffres', 'fichiers', 'categories', 'images'));
     }
 
 }

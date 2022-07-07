@@ -260,8 +260,8 @@
                                 <img src="{{asset('site/images/littoral/dechets.jpg')}} " style="width: 100px; height: 80px ;">
                             </div>
                             <div class="binduz-er-content">
-                                <h4 class="binduz-er-title">Avis ministriel</h4>
-                                <span>Ministere de l'interieur</span>
+                                <h4 class="binduz-er-title">Amadou DIOP</h4>
+                                <span>Ministre de l'urbanisme</span>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -284,652 +284,143 @@
     </div>
 </section>
 
-
-<br>
-
-<section class="binduz-er-video-post-area">
+<section class="binduz-er-trending-today-area">
+    <div class="binduz-er-bg-cover"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <div class="binduz-er-video-post-topbar">
-                    <div class="binduz-er-video-post-title">
-                        <h3 class="binduz-er-title">Actualites Video Post</h3>
+            <div class="col-lg-12">
+                <div class="binduz-er-trending-today-topbar">
+                    <div class="binduz-er-trending-today-title">
+                        <h3 class="binduz-er-title">Derniers fichiers</h3>
                     </div>
-                </div>
-            </div>
-            <div class="  col-lg-4">
-                <div class="binduz-er-video-post-tab">
-                    <ul class="nav nav-pills justify-content-lg-end justify-content-start" id="pills-tab-2" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="pills-21-tab" data-bs-toggle="pill" href="#pills-21" role="tab" aria-controls="pills-21" aria-selected="true">All</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="pills-22-tab" data-bs-toggle="pill" href="#pills-22" role="tab" aria-controls="pills-22" aria-selected="false">Travel</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="pills-23-tab" data-bs-toggle="pill" href="#pills-23" role="tab" aria-controls="pills-23" aria-selected="false">Fashion</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="pills-24-tab" data-bs-toggle="pill" href="#pills-24" role="tab" aria-controls="pills-24" aria-selected="false">Health</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="pills-25-tab" data-bs-toggle="pill" href="#pills-25" role="tab" aria-controls="pills-25" aria-selected="false">Nature</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <div class="tab-content" id="pills-tabContent-2">
-            <div class="tab-pane fade show active" id="pills-21" role="tabpanel" aria-labelledby="pills-21-tab">
-                <div class=" row">
-                    <div class="  col-lg-3 col-md-6 order-lg-1 order-1">
-                        <div class="binduz-er-video-post-item">
-                            @foreach ($fichiers as $fichier)
-                                    @includeIf($fichier->type_fichier_id == 'mp4')
-                                    {
-                                        <div class="binduz-er-trending-news-list-box">
-                                            <div class="binduz-er-thumb">
-                                                <img src="{{asset('storage')}}/{{$fichier->video}}" alt="">
-                                                <div class="binduz-er-play">
-                                                    <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="binduz-er-content">
-                                                <div class="binduz-er-meta-item">
-                                                    <div class="binduz-er-meta-categories">
-                                                        <a href="#">{{$fichier->titre}}</a>
-                                                    </div>
-                                                    <div class="binduz-er-meta-date">
-                                                        <span><i class="fal fa-calendar-alt"></i> {{$fichier->date}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="binduz-er-trending-news-list-title">
-                                                    <h4 class="binduz-er-title"><a href="#">{{$fichier->domaine}}</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                            @endforeach
+        <div class="row">
+            @foreach ($fichiers as $fichier)
+                
+            <div class="col-lg-3 col-md-6">
+                <div class="binduz-er-trending-today-item">
+                    <div class="binduz-er-trending-news-list-box">
+                        <div class="binduz-er-thumb">
+                            <img src="{{('site/images/slide/Slide 5.png')}}" alt="">
+                        </div>
+                        <div class="binduz-er-content">
+                            <div class="binduz-er-trending-news-list-title">
+                                <h4 class="binduz-er-title"><a href="#">{{$fichier->titre}}</a></h4>
+                            </div>
+                            <div class="binduz-er-meta-item">
+                                <div class="binduz-er-meta-categories">
+                                    <a href="{{ route('fichier.telecharger',['id' => $fichier->id]) }}">Telecharger</a>
+                                </div>
+                                <div class="binduz-er-meta-date">
+                                    <span><i class="fal fa-calendar-alt"></i> {{$fichier->date->format('j-M-y H:m','24h')}}</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
+</section>
 
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-3.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Android Enterprise security delivers for flexible work</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="  col-lg-6 order-lg-2 order-3">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box main-item">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-2.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Escucha las historias de los educadores en esta Semana de Apreciación del Profesor</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 order-lg-3 order-2">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-4.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">This new emoji has been years in the making</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-5.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">New resources on the gender gap in computer science </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<section class="binduz-er-main-posts-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="binduz-er-video-post-topbar">
+                    <div class="binduz-er-video-post-title">
+                        <h3 class="binduz-er-title">Galerie</h3>
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="pills-22" role="tabpanel" aria-labelledby="pills-22-tab">
-                <div class=" row">
-                    <div class="  col-lg-3 col-md-6 order-lg-1 order-1">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-1.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
+                <div class="row">
+                    @foreach ($images as $image)
+                        @if ($image->type_fichier->libelle == "image")
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="binduz-er-main-posts-item">
+                                <div class="binduz-er-trending-news-list-box">
+                                    <div class="binduz-er-thumb">
+                                        <img src="{{asset('storage')}}/{{$image->url}}" alt="">
                                     </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
+                                    <div class="binduz-er-content">
+                                        <div class="binduz-er-meta-item">
+                                            <div class="binduz-er-meta-categories">
+                                                <a href="#">{{$image->domaine->libelle}}</a>
+                                            </div>
+                                            <div class="binduz-er-meta-date">
+                                                <span><i class="fal fa-calendar-alt"></i> {{$image->date->format('d-M-y h:m', '24H')}}</span>
+                                            </div>
                                         </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
+                                        <div class="binduz-er-trending-news-list-title">
+                                            <h4 class="binduz-er-title"><a href="#">{{$image->titre}}</a></h4>
                                         </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">A Matter of Impact: April updates from Google.org</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-3.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Android Enterprise security delivers for flexible work</a></h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="  col-lg-6 order-lg-2 order-3">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box main-item">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-2.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Escucha las historias de los educadores en esta Semana de Apreciación del Profesor</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 order-lg-3 order-2">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-4.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">This new emoji has been years in the making</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-5.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">New resources on the gender gap in computer science </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="binduz-er-add pt-10">
+                    <img src="{{asset('site/images/space-thumb.jpg')}}" alt="">
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-23" role="tabpanel" aria-labelledby="pills-23-tab">
-                <div class=" row">
-                    <div class="  col-lg-3 col-md-6 order-lg-1 order-1">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-1.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">A Matter of Impact: April updates from Google.org</a></h4>
-                                    </div>
-                                </div>
+            <div class="col-lg-3">
+                {{-- <div class="binduz-er-sidebar-about">
+                    <div class="binduz-er-sidebar-title">
+                        <h4 class="binduz-er-title">About Me</h4>
+                    </div>
+                    <div class="binduz-er-sidebar-about-item">
+                        <div class="binduz-er-sidebar-about-user d-flex">
+                            <div class="binduz-er-thumb">
+                                <img src="{{asset('site/images/user.jpg')}}" alt="">
                             </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-3.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Android Enterprise security delivers for flexible work</a></h4>
-                                    </div>
-                                </div>
+                            <div class="binduz-er-content">
+                                <h4 class="binduz-er-title">Miranda Halim</h4>
+                                <span>Author</span>
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                </ul>
                             </div>
+                        </div>
+                        <div class="binduz-er-text">
+                            <p>The functional aspect comes first in the work process because it’s the core of the object: What is its purpose? something else?</p>
+                            <a class="binduz-er-main-btn" href="#">Connect With Me</a>
                         </div>
                     </div>
-                    <div class="  col-lg-6 order-lg-2 order-3">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box main-item">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-2.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Escucha las historias de los educadores en esta Semana de Apreciación del Profesor</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </div> --}}
+                <div class="binduz-er-sidebar-latest-post">
+                    <div class="binduz-er-sidebar-title">
+                        <h4 class="binduz-er-title">Appel d'offre</h4>
                     </div>
-                    <div class="  col-lg-3 col-md-6 order-lg-3 order-2">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
+                    <div class="binduz-er-sidebar-latest-post-box">
+                        @foreach ($appelDoffres as $appel)
+                            <div class="binduz-er-sidebar-latest-post-item">
                                 <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-4.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
+                                    <img src="{{asset('site/images/slide/appel.png')}}" alt="latest">
                                 </div>
                                 <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">This new emoji has been years in the making</a></h4>
-                                    </div>
+                                    <span><i class="fal fa-calendar-alt"></i> Date fin : {{ $appel->dateFin->format('d-M-y : h:m','24H')}}</span>
+                                    <h4 class="binduz-er-title"><a href="#telecharger">{{$appel->libelle}}</a></h4>
                                 </div>
                             </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-5.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">New resources on the gender gap in computer science </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                       
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="pills-24" role="tabpanel" aria-labelledby="pills-24-tab">
-                <div class=" row">
-                    <div class="  col-lg-3 col-md-6 order-lg-1 order-1">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-1.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">A Matter of Impact: April updates from Google.org</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-3.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Android Enterprise security delivers for flexible work</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="binduz-er-sidebar-add-box mt-40">
+                    <div class="binduz-er-logo">
+                        <a href="#"><img src="{{asset('images/logo_white.png')}}" alt=""></a>
                     </div>
-                    <div class="  col-lg-6 order-lg-2 order-3">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box main-item">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-2.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Escucha las historias de los educadores en esta Semana de Apreciación del Profesor</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 order-lg-3 order-2">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-4.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">This new emoji has been years in the making</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-5.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">New resources on the gender gap in computer science </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="pills-25" role="tabpanel" aria-labelledby="pills-25-tab">
-                <div class=" row">
-                    <div class="  col-lg-3 col-md-6 order-lg-1 order-1">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-1.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">A Matter of Impact: April updates from Google.org</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-3.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Android Enterprise security delivers for flexible work</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-6 order-lg-2 order-3">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box main-item">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-2.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">Escucha las historias de los educadores en esta Semana de Apreciación del Profesor</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 order-lg-3 order-2">
-                        <div class="binduz-er-video-post-item">
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-4.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">This new emoji has been years in the making</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('site/images/video-post-thumb-5.png')}}" alt="">
-                                    <div class="binduz-er-play">
-                                        <a class="binduz-er-video-popup" href="#"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="#">Sunu-littoral</a>
-                                        </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">New resources on the gender gap in computer science </a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p>La préservation du littoral est un devoir pour tout citoyen sénégalais. Alors prenons soin de notre littoral</p>
                 </div>
             </div>
         </div>

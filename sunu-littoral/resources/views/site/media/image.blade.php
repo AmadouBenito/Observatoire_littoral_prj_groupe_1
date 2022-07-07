@@ -5,6 +5,7 @@
 
 <div class="row">
   @for($i=0; $i<$nb_images; $i++)
+    {{ $url_images }}
   <div class="col-lg-4">
     <div class="binduz-er-video-post recently-viewed-item">
         <div class="binduz-er-latest-news-item">

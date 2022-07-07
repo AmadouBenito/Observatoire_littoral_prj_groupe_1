@@ -9739,3 +9739,10 @@ p {
 .binduz-er-trending-news-list-box .binduz-er-thumb {
     height: 100%;
 }
+
+.binduz-er-trending-today-area .binduz-er-bg-cover {
+    left: 0;
+    top: 0;
+    background-image: url(../images/Slide5.jpg);
+    background-attachment: fixed;
+}
