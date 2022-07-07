@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
-            $table->string('lastName', 255);
+            //$table->string('lastName', 255);
             $table->string('tel', 255);
             $table->string('adresse', 255);
             // $table->string('role', 255);
@@ -26,8 +26,6 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->index('fk_user_role_idx');
             $table->rememberToken();
             $table->timestamps();
-
-
         });
     }
 

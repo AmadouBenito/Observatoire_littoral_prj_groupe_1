@@ -20,7 +20,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name',
-        'lastName',
+        // 'lastName',
         'tel',
         'adresse',
         'email',
@@ -81,5 +81,4 @@ class User extends Authenticatable
     {
         return $this->role()->labelle == 'ONG';
     }
-
 }
