@@ -98,14 +98,13 @@
             @foreach ($actualites as $actualite)
             <div class="binduz-er-news-portal-item">
                 <div class="binduz-er-thumb">
-                    <a href="#"><img src="{{asset('storage')}}/{{$actualite->image}}" alt="" style="width: 120px ; height: 120"></a>
+                    <a href="#lien_du_post"><img src="{{asset('storage')}}/{{$actualite->image}}" alt="" style="width: 120px ;"></a>
                 </div>
                 <div class="binduz-er-content">
                     <div class="binduz-er-post-meta-date">
                         <span><i class="fal fa-calendar-alt"></i> {{$actualite->date}}"</span>
                     </div>
                     <h4 class="binduz-er-title"><a href="#">{{$actualite->titre}} <br> </a></h4>
-                    <h6>{{$actualite->video}}</h6>
                 </div>
             </div>
             @endforeach
@@ -121,7 +120,7 @@
             <div class="col-lg-9">
                 <div class="binduz-er-video-post-topbar">
                     <div class="binduz-er-video-post-title">
-                        <h3 class="binduz-er-title">Trending news</h3>
+                        <h3 class="binduz-er-title">Dernières minutes</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -136,14 +135,14 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="">{{$actualite->titre}}</a>
+                                            <a href="">{{$actualite->categorie->libelle}}</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> {{$actualite->date}}</span>
                                         </div>
                                     </div>
                                     <div class="binduz-er-trending-news-list-title">
-                                        {{-- <h4 class="binduz-er-title"><a href="#">{{}}</a></h4> --}}
+                                        <h4 class="binduz-er-title"><a href="#">{{$actualite->titre}}</a></h4>
 
                                     </div>
                                 </div>
@@ -160,7 +159,7 @@
             <div class="col-lg-3">
                 <div class="binduz-er-sidebar-about">
                     <div class="binduz-er-sidebar-title">
-                        <h4 class="binduz-er-title">About Me</h4>
+                        <h4 class="binduz-er-title">Avis</h4>
                     </div>
                     <div class="binduz-er-sidebar-about-item">
                         <div class="binduz-er-sidebar-about-user d-flex">
@@ -168,7 +167,7 @@
                                 <img src="{{asset('site/images/littoral/dechets.jpg')}} " style="width: 100px; height: 80px ;">
                             </div>
                             <div class="binduz-er-content">
-                                <h4 class="binduz-er-title">Informations</h4>
+                                <h4 class="binduz-er-title">Avis ministriel</h4>
                                 <span>Ministere de l'interieur</span>
                                 <ul>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -180,10 +179,10 @@
                             </div>
                         </div>
                         <div class="binduz-er-text">
-                            <p> une étude, dont une copie nous est parvenue, montre que toutes les villes côtières de la sous-région risquent de disparaître d’ici l’an 2100,
+                            <p> Une étude, dont une copie nous est parvenue, montre que toutes les villes côtières de la sous-région risquent de disparaître d’ici l’an 2100,
                                 si rien n’est fait, du fait de plusieurs facteurs dont l’érosion côtière, la pression démographique et l’activité socio-économique sur le littoral,
                                 l’avancée de la mer et la changement climatique.</p>
-                            <a class="binduz-er-main-btn" href="https://www.google.fr/url?sa=i&url=http%3A%2F%2Fsenemag.free.fr%2Fspip.php%3Farticle915&psig=AOvVaw1UyNf8M2WUmZ1SRBsQvyXl&ust=1657047023307000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCLCq-K7z3_gCFQAAAAAdAAAAABAz">Plus d'Information <u>Ici</u></a>
+                            <a class="binduz-er-main-btn" target="blank" href="http://senemag.free.fr/spip.php?article915">Plus d'Information ici</a>
                         </div>
                     </div>
                 </div>
@@ -196,23 +195,22 @@
 
                         <div class="binduz-er-sidebar-latest-post-item">
                             <div class="binduz-er-thumb">
-                                <img src="{{asset('site/images/littoral/PDF_24287 (1).png')}}" alt="latest" style="width: 25px ; height: 25px ;">
+                                <img src="{{asset('site/images/littoral/pdf.png')}}" alt="latest" style="width: 25px ; height: 30px ; margin-top: 10px">
                             </div>
                             <div class="binduz-er-content">
-                                <span><i class="fal fa-calendar-alt"></i> 'expire' {{$appelDoffre->dateFin}}</span>
-                                <h4 class="binduz-er-title"><a href="{{('storage')}}/{{$appelDoffre->fichier}}">{{$appelDoffre->fichier}}</a></h4>
+                                <span><i class="fal fa-calendar-alt"></i> Expire le {{$appelDoffre->dateFin}}</span>
+                                <h4 class="binduz-er-title"><a href="{{('storage')}}/{{$appelDoffre->fichier}}">{{$appelDoffre->libelle}}</a></h4>
                             </div>
                         </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="binduz-er-sidebar-add-box mt-40">
-
                     <div class="binduz-er-logo">
                         <a href="#"><img src="" alt=""></a>
                     </div>
                     <p></p>
-                    <a class="binduz-er-main-btn" href="#">Purchase Now</a>
+                    <a class="binduz-er-main-btn" href="#">Voir tous</a>
 
                 </div>
             </div>
