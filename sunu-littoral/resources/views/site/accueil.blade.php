@@ -365,9 +365,6 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="binduz-er-add pt-10">
-                    <img src="{{asset('site/images/space-thumb.jpg')}}" alt="">
-                </div>
             </div>
             <div class="col-lg-3">
                 {{-- <div class="binduz-er-sidebar-about">

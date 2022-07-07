@@ -29,13 +29,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 
 /* Cette route est pour tester l'intégration de
 la page d'accueil du site (Front office) */
-Route::get('/',[ActualiteController::class, 'index'])->name('actualite');
+Route::get('/',[ActualiteController::class, 'index'])->name('accueil');
 Route::view('/actualite', 'site.actualite');//vue actualite
 
 //Page Proge et Appel d'offre
