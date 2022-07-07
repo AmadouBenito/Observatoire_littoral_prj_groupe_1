@@ -18,6 +18,7 @@ class CreateActualite extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['user_id'] = auth()->id();
+        $data['date'] = now();
     
         return $data;
     }

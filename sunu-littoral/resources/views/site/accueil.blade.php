@@ -3,7 +3,6 @@
 @section('actualite')
 
 <section>
-
     <div class="hero-slide-active">
         <div class="binduz-er-hero-area d-flex align-items-center">
             <div class="binduz-er-bg-cover">
@@ -113,50 +112,144 @@
     </div>
 </section>
 
-
-<section class="binduz-er-main-posts-area">
+<section class="binduz-er-trending-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
-                <div class="binduz-er-video-post-topbar">
-                    <div class="binduz-er-video-post-title">
-                        <h3 class="binduz-er-title">Dernières minutes</h3>
+            <div class="col-lg-9 col-md-12">
+                <div class="binduz-er-trending-news-topbar d-block d-md-flex justify-content-between align-items-center">
+                    <div class="binduz-er-trending-box">
+                        <div class="binduz-er-title">
+                            <h3 class="binduz-er-title">Actualités</h3>
+                        </div>
+                    </div>
+
+                    <div class="binduz-er-news-tab-btn d-flex justify-content-md-end justify-content-start">
+                        <ul class="nav nav-pills " id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="pills-0-tab" data-bs-toggle="pill" href="#pills-0" role="tab" aria-controls="pills-0" aria-selected="false">Toute catégorie</a>
+                            </li>
+                            @foreach ($categories as $categorie)
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-{{$categorie->id}}-tab" data-bs-toggle="pill" href="#pills-{{$categorie->id}}" role="tab" aria-controls="pills-{{$categorie->id}}" aria-selected="false">{{$categorie->libelle}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
                 <div class="row">
-                    @foreach ($actualites as $actualite)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="binduz-er-main-posts-item">
-
-                            <div class="binduz-er-trending-news-list-box">
-                                <div class="binduz-er-thumb">
-                                    <img src="{{asset('storage')}}/{{$actualite->image}}" alt="">
-                                </div>
-                                <div class="binduz-er-content">
-                                    <div class="binduz-er-meta-item">
-                                        <div class="binduz-er-meta-categories">
-                                            <a href="">{{$actualite->categorie->libelle}}</a>
+                    <div class="col-lg-12">
+                        <div class="binduz-er-trending-news-list">
+                            <div class="tab-content mt-50" id="pills-tabContent">
+                               
+                                <div class="tab-pane fade show active" id="pills-0" role="tabpanel" aria-labelledby="pills-0-tab">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-md-6">
+                                            <div class="binduz-er-trending-box">
+                                                <div class="binduz-er-trending-news-item">
+                                                    <img src="{{asset('storage')}}/{{$actualitesLast->image}}" alt="">
+                                                    <div class="binduz-er-trending-news-overlay">
+                                                        <div class="binduz-er-trending-news-meta">
+                                                            <div class="binduz-er-meta-categories">
+                                                                <a href="#">{{$actualitesLast->categorie->libelle}}</a>
+                                                            </div>
+                                                            <div class="binduz-er-meta-date">
+                                                                <span><i class="fal fa-calendar-alt"></i> {{$actualitesLast->date->format("d-M-y h:m")}}</span>
+                                                            </div>
+                                                            <div class="binduz-er-trending-news-title">
+                                                                <h3 class="binduz-er-title"><a href="#">{{$actualitesLast->titre}}</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="binduz-er-meta-date">
-                                            <span><i class="fal fa-calendar-alt"></i> {{$actualite->date}}</span>
+                                        <div class="col-lg-5 col-md-6">
+                                            <div class="binduz-er-trending-news-list-item">
+                                                @foreach ($actualites as $actualite)
+                                                        <div class="binduz-er-trending-news-list-box">
+                                                            <div class="binduz-er-thumb">
+                                                                <img src="{{asset('storage')}}/{{$actualite->image}}"alt="">
+                                                            </div>
+                                                            <div class="binduz-er-content">
+                                                                <div class="binduz-er-meta-item">
+                                                                    <div class="binduz-er-meta-categories">
+                                                                        <a href="#">{{$actualite->categorie->libelle}}</a>
+                                                                    </div>
+                                                                    <div class="binduz-er-meta-date">
+                                                                        <span><i class="fal fa-calendar-alt"></i>  {{$actualite->date->format("d-M-y h:m")}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="binduz-er-trending-news-list-title">
+                                                                    <h4 class="binduz-er-title"><a href="#">{{$actualite->titre}}</a></h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="binduz-er-trending-news-list-title">
-                                        <h4 class="binduz-er-title"><a href="#">{{$actualite->titre}}</a></h4>
-
-                                    </div>
                                 </div>
+
+                                @foreach ($categories as $categorie)
+                                    <div class="tab-pane fade" id="pills-{{$categorie->id}}" role="tabpanel" aria-labelledby="pills-{{$categorie->id}}-tab">
+                                        <div class="row">
+                                            <div class="col-lg-7 col-md-6">
+                                                <div class="binduz-er-trending-box">
+                                                    <div class="binduz-er-trending-news-item">
+                                                        <img src="{{asset('storage')}}/{{$actualitesLast->image}}" alt="">
+                                                        <div class="binduz-er-trending-news-overlay">
+                                                            <div class="binduz-er-trending-news-meta">
+                                                                <div class="binduz-er-meta-categories">
+                                                                    <a href="#">{{$actualitesLast->categorie->libelle}}</a>
+                                                                </div>
+                                                                <div class="binduz-er-meta-date">
+                                                                    <span><i class="fal fa-calendar-alt"></i> {{$actualitesLast->date->format("d-M-y h:m")}}</span>
+                                                                </div>
+                                                                <div class="binduz-er-trending-news-title">
+                                                                    <h3 class="binduz-er-title"><a href="#">{{$actualitesLast->titre}}</a></h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-md-6">
+                                                <div class="binduz-er-trending-news-list-item">
+                                                    @foreach ($actualites as $actualite)
+                                                        @if ($actualite->categorie_id == $categorie->id)
+                                                            <div class="binduz-er-trending-news-list-box">
+                                                                <div class="binduz-er-thumb">
+                                                                    <img src="{{asset('storage')}}/{{$actualite->image}}"alt="">
+                                                                </div>
+                                                                <div class="binduz-er-content">
+                                                                    <div class="binduz-er-meta-item">
+                                                                        <div class="binduz-er-meta-categories">
+                                                                            <a href="#">{{$actualite->categorie->libelle}}</a>
+                                                                        </div>
+                                                                        <div class="binduz-er-meta-date">
+                                                                            <span><i class="fal fa-calendar-alt"></i>  {{$actualite->date->format("d-M-y h:m")}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="binduz-er-trending-news-list-title">
+                                                                        <h4 class="binduz-er-title"><a href="#">{{$actualite->titre}}</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                        
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-
                         </div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="binduz-er-add pt-10">
-                    <img src="{{asset('site/images/space-thumb.jpg')}}" alt="">
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="  col-lg-3 col-md-12">
                 <div class="binduz-er-sidebar-about">
                     <div class="binduz-er-sidebar-title">
                         <h4 class="binduz-er-title">Avis</h4>
@@ -186,37 +279,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="binduz-er-sidebar-latest-post">
-                    <div class="binduz-er-sidebar-title">
-                        <h4 class="binduz-er-title">Les Appels d'offres</h4>
-                    </div>
-                    <div class="binduz-er-sidebar-latest-post-box">
-                        @foreach ($appelDoffres as $appelDoffre)
-
-                        <div class="binduz-er-sidebar-latest-post-item">
-                            <div class="binduz-er-thumb">
-                                <img src="{{asset('site/images/littoral/pdf.png')}}" alt="latest" style="width: 25px ; height: 30px ; margin-top: 10px">
-                            </div>
-                            <div class="binduz-er-content">
-                                <span><i class="fal fa-calendar-alt"></i> Expire le {{$appelDoffre->dateFin}}</span>
-                                <h4 class="binduz-er-title"><a href="{{('storage')}}/{{$appelDoffre->fichier}}">{{$appelDoffre->libelle}}</a></h4>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="binduz-er-sidebar-add-box mt-40">
-                    <div class="binduz-er-logo">
-                        <a href="#"><img src="" alt=""></a>
-                    </div>
-                    <p></p>
-                    <a class="binduz-er-main-btn" href="#">Voir tous</a>
-
-                </div>
             </div>
         </div>
     </div>
 </section>
+
+
 <br>
 
 <section class="binduz-er-video-post-area">

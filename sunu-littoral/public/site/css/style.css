@@ -9722,3 +9722,20 @@ p {
     overflow: hidden;
     color: #C8C8C8;
 }
+
+.binduz-er-trending-news-item>img {
+    height: 450px;
+}
+
+.binduz-er-trending-news-list-box .binduz-er-thumb {
+    max-width: 80px;
+    height: 100%;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100px;
+}
+
+.binduz-er-trending-news-list-box .binduz-er-thumb {
+    height: 100%;
+}

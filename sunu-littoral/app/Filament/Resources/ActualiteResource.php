@@ -51,7 +51,8 @@ class ActualiteResource extends Resource
                 Forms\Components\TextInput::make('video')
                 ->placeholder("Veillez mettre une vodéo youtube")
                 ->maxLength(45),
-                Forms\Components\DateTimePicker::make('date'),
+                Forms\Components\DateTimePicker::make('date')
+                ->hidden(),
                 Forms\Components\TextInput::make('user_id')
                 ->label("User")
                 ->hidden(),
