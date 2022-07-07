@@ -92,7 +92,7 @@ h6 {
 }
 
 .binduz-er-title {
-    text-transform: capitalize;
+    text-transform: inherit
 }
 
 p {
@@ -9698,4 +9698,18 @@ p {
     color: #197576;
     font-weight: 900;
     border: 1px #fbbc04 solid;
+}
+
+.binduz-er-hero-news-content .binduz-er-hero-title .binduz-er-title a {
+    color: #fbbc04;
+}
+
+.binduz-er-header-nav {
+    padding: 0px !important;
+}
+
+.binduz-er-main-posts-item .binduz-er-trending-news-list-box .binduz-er-thumb img {
+    width: 100%;
+    height: 250px;
+    transition: all linear 0.5s;
 }

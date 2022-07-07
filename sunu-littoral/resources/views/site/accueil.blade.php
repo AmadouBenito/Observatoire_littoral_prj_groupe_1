@@ -7,7 +7,7 @@
     <div class="hero-slide-active">
         <div class="binduz-er-hero-area d-flex align-items-center">
             <div class="binduz-er-bg-cover">
-                <img src="{{asset('site/images/littoral/annotation_2020-06-15_195500.png')}} " alt="" style="width: 1920px ; heig">
+                <img src="{{asset('site/images/slide/Slide 1.png')}} " alt="" style="width: 1920px ;">
             </div>
             <div class="container">
                 <div class="row">
@@ -17,20 +17,9 @@
                                 <div class="binduz-er-meta-category">
                                     <a href="#">Sunu Littoral</a>
                                 </div>
-                                <div class="binduz-er-meta-date">
-                                    <span><i class="fal fa-calendar-alt"></i> 24th February 2022</span>
-                                </div>
                             </div>
                             <div class="binduz-er-hero-title">
-                                <h3 class="binduz-er-title"><a href="#">Le littoral Senegal 1</a></h3>
-                            </div>
-                            <div class="binduz-er-meta-author">
-                                <div class="binduz-er-author">
-
-                                </div>
-                                <div class="binduz-er-meta-list">
-
-                                </div>
+                                <h3 class="binduz-er-title"><a href="#">Sunu littoral, l'Observatoire du littoral</a></h3>
                             </div>
                         </div>
                     </div>
@@ -40,8 +29,7 @@
         </div>
         <div class="binduz-er-hero-area d-flex align-items-center">
             <div class="binduz-er-bg-cover item-2">
-                <img src="{{asset('site/images/littoral/ac7291606dd3a21aecfc5ace494f51-5e6fb.jpg')}} " alt="" style="width: 1920px ; heig">
-
+                <img src="{{asset('site/images/slide/Slide 2.png')}} " alt="" style="width: 1920px ;">
             </div>
             <div class="container">
                 <div class="row">
@@ -49,36 +37,11 @@
                         <div class="binduz-er-hero-news-content">
                             <div class="binduz-er-hero-meta">
                                 <div class="binduz-er-meta-category">
-                                    <a href="#">Technology</a>
-                                </div>
-                                <div class="binduz-er-meta-date">
-                                    <span><i class="fal fa-calendar-alt"></i> 24th February 2020</span>
+                                    <a href="#">Sunu littoral</a>
                                 </div>
                             </div>
                             <div class="binduz-er-hero-title">
-                                <h3 class="binduz-er-title"><a href="#">Le littoral Senegal 2 </a></h3>
-                            </div>
-                            <div class="binduz-er-meta-author">
-                                <div class="binduz-er-author">
-                                    <img src="{{asset('site/images/user-1.png')}}" alt="">
-                                    <span>By <span>Ndoye</span></span>
-                                </div>
-                                <div class="binduz-er-meta-list">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="binduz-er-hero-weather d-flex justify-content-end">
-                            <div class="binduz-er-weather-item">
-                                <img src="{{asset('site/images/icon/icon-1.png')}}" alt="">
-                                <h5 class="binduz-er-title"></h5>
-                                <span>32°C</span>
-                            </div>
-                            <div class="binduz-er-weather-item">
-                                <img src="{{asset('site/images/icon/icon-2.png')}}" alt="">
-
+                                <h3 class="binduz-er-title"><a href="#">Ayez acces à toutes les données du littoral </a></h3>
                             </div>
                         </div>
                     </div>
@@ -87,8 +50,7 @@
         </div>
         <div class="binduz-er-hero-area d-flex align-items-center">
             <div class="binduz-er-bg-cover item-3">
-                <img src="{{asset('site/images/littoral/de0b1a6ce9c564bee3676b58939fa0-5b754.jpg')}} " alt="" style="width: 1920px ; heig">
-
+                <img src="{{asset('site/images/slide/Slide 3.png')}} " alt="" style="width: 1920px ;">
             </div>
             <div class="container">
                 <div class="row">
@@ -96,38 +58,35 @@
                         <div class="binduz-er-hero-news-content">
                             <div class="binduz-er-hero-meta">
                                 <div class="binduz-er-meta-category">
-                                    <a href="#">Technology</a>
-                                </div>
-                                <div class="binduz-er-meta-date">
-                                    <span><i class="fal fa-calendar-alt"></i> 24th February 2020</span>
+                                    <a href="#">Sunu-littoral</a>
                                 </div>
                             </div>
                             <div class="binduz-er-hero-title">
-                                <h3 class="binduz-er-title"><a href="#">Le littoral Senegal 3</a></h3>
-                            </div>
-                            <div class="binduz-er-meta-author">
-                                <div class="binduz-er-author">
-                                    <img src="{{asset('site/images/user-1.png')}}" alt="">
-                                    <span> <span></span></span>
-                                </div>
-                                <div class="binduz-er-meta-list">
-
-                                </div>
+                                <h3 class="binduz-er-title"><a href="#">Proposer vos projets sur le littoral </a></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7">
-                        <div class="binduz-er-hero-weather d-flex justify-content-end">
-                            <div class="binduz-er-weather-item">
-                                <img src="{{asset('site/images/icon/icon-1.png')}}" alt="">
-                                <h5 class="binduz-er-title"></h5>
-                                <span>32°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="binduz-er-hero-area d-flex align-items-center">
+            <div class="binduz-er-bg-cover item-3">
+                <img src="{{asset('site/images/slide/Slide 4.png')}} " alt="" style="width: 1920px ;">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-7">
+                        <div class="binduz-er-hero-news-content">
+                            <div class="binduz-er-hero-meta">
+                                <div class="binduz-er-meta-category">
+                                    <a href="#">Sunu-littoral</a>
+                                </div>
+                                
                             </div>
-                            <div class="binduz-er-weather-item">
-                                <img src="{{asset('site/images/icon/icon-2.png')}}" alt="">
-                                <h5 class="binduz-er-title">New York </h5>
-                                <span>32°C</span>
+                            <div class="binduz-er-hero-title">
+                                <h3 class="binduz-er-title"><a href="#">Sunu-littoral, yëfi ñëpp la</a></h3>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -336,7 +295,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -362,7 +321,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -387,7 +346,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -408,7 +367,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -437,7 +396,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -458,7 +417,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -483,7 +442,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -508,7 +467,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -529,7 +488,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -558,7 +517,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -579,7 +538,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -604,7 +563,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -629,7 +588,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -650,7 +609,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -679,7 +638,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -700,7 +659,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -725,7 +684,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -750,7 +709,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -771,7 +730,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -800,7 +759,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -821,7 +780,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -846,7 +805,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -871,7 +830,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
@@ -892,7 +851,7 @@
                                 <div class="binduz-er-content">
                                     <div class="binduz-er-meta-item">
                                         <div class="binduz-er-meta-categories">
-                                            <a href="#">Technology</a>
+                                            <a href="#">Sunu-littoral</a>
                                         </div>
                                         <div class="binduz-er-meta-date">
                                             <span><i class="fal fa-calendar-alt"></i> 14th February 2020</span>
