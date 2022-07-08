@@ -34,6 +34,7 @@ Route::get('/dashboard', function () {
 la page d'accueil du site (Front office) */
 Route::get('/',[ActualiteController::class, 'index'])->name('accueil');
 Route::view('/actualite', 'site.actualite');//vue actualite
+Route::view('/presentation', 'site.presentation')->name('presentation');//vue actualite
 
 //Page Proge et Appel d'offre
 Route::get('/projet', [ControllerProjet::class, 'projet'])->name('accueil.projet');

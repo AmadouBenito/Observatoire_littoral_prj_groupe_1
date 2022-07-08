@@ -86,11 +86,7 @@
                                             <a class="nav-link" href="{{route('accueil')}}">Accueil </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#html">Présentation <i class="fa fa-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#html">Historique</a></li>
-                                                <li><a href="#2.html">Mission</a></li>
-                                            </ul>
+                                            <a class="nav-link" href="{{route('presentation')}}">Présentation</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#html">Publication <i class="fa fa-angle-down"></i></a>
@@ -133,6 +129,7 @@
     @yield('mes_images')
     @yield('mes_videos')
     @yield('mes_audios')
+    @yield('presentation')
 
     @yield('projet')
     @yield('appelOffre')
